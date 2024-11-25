@@ -1,0 +1,9 @@
+[submodule "code_kem/libopencm3"]
+	path = code_kem/libopencm3
+	url = https://github.com/libopencm3/libopencm3.git
+[submodule "code_sign/libopencm3"]
+	path = code_sign/libopencm3
+	url = https://github.com/libopencm3/libopencm3.git
+[submodule "bench_core/m3/libopencm3"]
+	path = bench_core/m3/libopencm3
+	url = https://github.com/libopencm3/libopencm3.git

@@ -1,3 +1,33 @@
+
+**/TC
+**/TC-striding
+**/TMVP
+**/Nussbaumer
+
+**/gen
+**/rand_test
+
+**/*.o
+**/*.d
+**/*.bin
+**/*.elf
+
+**/obj
+
+**/*.pdf
+
+**/.DS_Store
+**/__pycache__
+
+
+*.dep
+code_kem/crypto_kem/saber/avrAsm_TC-striding_D/avrAsm_TC-striding/avrAsm_TC-striding.dep
+code_kem/crypto_kem/saber/avrAsm_TC-striding_D/avrAsm_TC-striding/Debug/BrowseInfo/fips202.pbi.dep
+code_kem/crypto_kem/saber/avrAsm_TC-striding_D/avrAsm_TC-striding/settings/avrAsm_TC-striding.wsdt
+code_kem/crypto_kem/saber/avrAsm_TC-striding_D/avrAsm_TC-striding/settings/avrAsm_TC-striding.wsdt
+code_kem/crypto_kem/saber/avrAsm_TC-striding_D/avrAsm_TC-striding/Debug/BrowseInfo/fips202.pbi.dep
+code_kem/crypto_kem/saber/avrAsm_TC-striding_D/avrAsm_TC-striding/avrAsm_TC-striding.dep
+
 # Prerequisites
 *.d
 

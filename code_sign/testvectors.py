@@ -1,0 +1,95 @@
+#!/usr/bin/env python3
+
+import datetime
+import subprocess
+import sys
+import filecmp
+from os.path import exists
+
+import serial
+import numpy as np
+from config import Settings
+
+crypto_type = "sign"
+testType = "testvectors"
+iterations = 1
+schemeList = ["dilithium2", "dilithium3", "dilithium5"]
+impleList = [ "ref", "old", "plant", "asmspeed"]
+cpu = "m3"
+
+runned = []
+skipped = []
+
+def getBinary(scheme, impl):
+    return f"elf/crypto_{crypto_type}_{scheme}_{impl}_{testType}.elf"
+
+def getFlash(binary):
+    return f"openocd -f nucleo-f2.cfg -c \"program {binary} reset exit\" "
+
+def makeAll():
+    if Settings.CLEAN == True:
+        subprocess.check_call(f"make clean", shell=True)
+    subprocess.check_call(f"sh makelib.sh", shell=True)
+    subprocess.check_call(f"make -j {Settings.JOBS} ITERATIONS={iterations} PLATFORM={Settings.PLATFORM}", shell=True)
+
+def test(scheme, impl):
+    binary = getBinary(scheme, impl)
+
+    if exists(binary) == 0:
+        skipped.append(binary)
+        print(f"skip {binary}")
+        return b""
+
+    outfile = open(f"testvectors_{scheme}_{imple}.txt", "w+")
+
+    try:
+        subprocess.check_call(getFlash(binary), shell=True)
+    except:
+        print(f"st-flash failed --> retry {binary}")
+        return test(scheme, impl)
+
+    runned.append(binary)
+
+    with serial.Serial(Settings.SERIAL_DEVICE, Settings.BAUD_RATE, timeout=10) as dev:
+        log = b""
+
+        while True:
+            device_output = dev.read()
+            if device_output == b'':
+                print(f"timeout --> retry {binary}")
+                return test(scheme, impl)
+            sys.stdout.buffer.write(device_output)
+            sys.stdout.flush()
+            log += device_output
+            if device_output == b'#':
+                break
+    
+    log = log.decode(errors="ignore")
+    log = log.replace("=\n", "")
+    log = log.replace('=', '')
+    outfile.write(log)
+    outfile.flush()
+    outfile.close()
+
+makeAll()
+
+for scheme in schemeList:
+    for imple in impleList:
+        test(scheme, cpu + imple)
+
+print("\n======== Runned ========\n")
+print(str.join('\n', runned))
+print("\n======== Skipped ========\n")
+print(str.join('\n', skipped))
+
+for scheme in schemeList:
+    ref = None
+    for imple in impleList:
+        if exists(f"./testvectors_{scheme}_{imple}.txt"):
+            if ref == None:
+                ref = f"./testvectors_{scheme}_{imple}.txt"
+            else:
+                assert filecmp.cmp(ref, f"./testvectors_{scheme}_{imple}.txt") == True
+
+print("\n======== Testvectors compared ========\n")
+

@@ -1,0 +1,47 @@
+stack measurements written on 2024-11-16 13:27:40.212722+00:00; iterations=1
+
+m3 results for lightsaber (impl=m3ref)
+lightsaberm3refkeygen: 4212
+lightsaberm3refencap: 4380
+lightsaberm3refdecap: 4380
+
+m3 results for lightsaber (impl=m3old)
+lightsaberm3oldkeygen: 5756
+lightsaberm3oldencap: 6428
+lightsaberm3olddecap: 6428
+
+m3 results for lightsaber (impl=m3speed)
+lightsaberm3speedkeygen: 24492
+lightsaberm3speedencap: 28756
+lightsaberm3speeddecap: 28756
+
+m3 results for saber (impl=m3ref)
+saberm3refkeygen: 4724
+saberm3refencap: 4900
+saberm3refdecap: 4900
+
+m3 results for saber (impl=m3old)
+saberm3oldkeygen: 6780
+saberm3oldencap: 7460
+saberm3olddecap: 7460
+
+m3 results for saber (impl=m3speed)
+saberm3speedkeygen: 28084
+saberm3speedencap: 35932
+saberm3speeddecap: 35932
+
+m3 results for firesaber (impl=m3ref)
+firesaberm3refkeygen: 5236
+firesaberm3refencap: 5412
+firesaberm3refdecap: 5412
+
+m3 results for firesaber (impl=m3old)
+firesaberm3oldkeygen: 7804
+firesaberm3oldencap: 8484
+firesaberm3olddecap: 8484
+
+m3 results for firesaber (impl=m3speed)
+firesaberm3speedkeygen: 31668
+firesaberm3speedencap: 43100
+firesaberm3speeddecap: 43100
+

@@ -1,0 +1,47 @@
+speed measurements written on 2024-11-15 19:29:12.566736+00:00; iterations=100
+
+m3 results for lightsaber (impl=m3ref)
+lightsaberm3refkeygen: 3579k
+lightsaberm3refencap: 5252k
+lightsaberm3refdecap: 6918k
+
+m3 results for lightsaber (impl=m3old)
+lightsaberm3oldkeygen: 464k
+lightsaberm3oldencap: 628k
+lightsaberm3olddecap: 686k
+
+m3 results for lightsaber (impl=m3speed)
+lightsaberm3speedkeygen: 397k
+lightsaberm3speedencap: 534k
+lightsaberm3speeddecap: 568k
+
+m3 results for saber (impl=m3ref)
+saberm3refkeygen: 8212k
+saberm3refencap: 10581k
+saberm3refdecap: 13080k
+
+m3 results for saber (impl=m3old)
+saberm3oldkeygen: 853k
+saberm3oldencap: 1079k
+saberm3olddecap: 1153k
+
+m3 results for saber (impl=m3speed)
+saberm3speedkeygen: 734k
+saberm3speedencap: 918k
+saberm3speeddecap: 962k
+
+m3 results for firesaber (impl=m3ref)
+firesaberm3refkeygen: 13425k
+firesaberm3refencap: 17523k
+firesaberm3refdecap: 20864k
+
+m3 results for firesaber (impl=m3old)
+firesaberm3oldkeygen: 1333k
+firesaberm3oldencap: 1608k
+firesaberm3olddecap: 1709k
+
+m3 results for firesaber (impl=m3speed)
+firesaberm3speedkeygen: 1131k
+firesaberm3speedencap: 1357k
+firesaberm3speeddecap: 1424k
+
