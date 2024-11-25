@@ -11,7 +11,7 @@ on the following platforms:
 
 For Dilithium, the artifact targets a certain Round 3 version.
 There are several modifications after the publication of [FIPS 204](https://csrc.nist.gov/pubs/fips/204/final).
-This artifact doesn't apply those changes as the they were not available during the time of the submission.
+This artifact doesn't apply those changes as they were not available at time of the submission.
 We explicitly include the target Dilithium Round 3 implementation in this artifact for the functionality tests and will modify the implementations in compliance to FIPS 204 in the future.
 
 # Introduction
