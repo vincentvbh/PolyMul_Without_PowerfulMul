@@ -17,8 +17,6 @@
 
 char out[128];
 
-
-
 int main(void){
 
     int32_t poly1[ARRAY_N], poly2[ARRAY_N];

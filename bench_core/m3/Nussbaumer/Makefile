@@ -12,7 +12,7 @@ COMMON_HEADER = $(COMMON_PATH)/tools.h $(COMMON_PATH)/naive_mult.h $(COMMON_PATH
 COMMON_SOURCE = $(COMMON_PATH)/tools.c $(COMMON_PATH)/naive_mult.c $(COMMON_PATH)/gen_table.c $(COMMON_PATH)/ntt_c.c
 
 ASM_HEADERs = macros.i
-ASM_SOURCEs = __asm_mul.S __asm_Nussbaumer.S __asm_iNussbaumer.S __asm_tmvp.S
+ASM_SOURCEs = __asm_Nussbaumer.S __asm_iNussbaumer.S __asm_tmvp.S __asm_TMVP_mul.S
 C_HEADERs = ring.h MV.h Hom.h
 C_SOURCEs = ring.c MV.c Hom.c
 
