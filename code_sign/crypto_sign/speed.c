@@ -7,6 +7,10 @@
 #include <stdint.h>
 #include <string.h>
 
+#ifndef ITERATIONS
+#define ITERATIONS 100
+#endif
+
 #define MLEN 59
 
 #define printcycles(S, U) send_unsignedll((S), (U))

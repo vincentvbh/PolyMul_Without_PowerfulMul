@@ -1,5 +1,7 @@
 #include "hal.h"
 
+#ifndef CROSS_ARMv7_HOSTTEST
+
 #define SERIAL_BAUD 9600
 
 #include <libopencm3/cm3/dwt.h>
@@ -85,19 +87,19 @@ static const uint32_t ApplicationExit = 0x20026;
 
 // Do a system call towards QEMU or the debugger.
 static uint32_t semihosting_syscall(uint32_t nr, const uint32_t arg) {
-	__asm__ volatile (
-		"mov r0, %[nr]\n"
-		"mov r1, %[arg]\n"
-		"bkpt 0xAB\n"
-		"mov %[nr], r0\n"
-	: [nr] "+r" (nr) : [arg] "r" (arg) : "0", "1");
-	return nr;
+  __asm__ volatile (
+    "mov r0, %[nr]\n"
+    "mov r1, %[arg]\n"
+    "bkpt 0xAB\n"
+    "mov %[nr], r0\n"
+  : [nr] "+r" (nr) : [arg] "r" (arg) : "0", "1");
+  return nr;
 }
 
 // Register a destructor that will call qemu telling them that the program
 // has exited successfully.
 static void __attribute__ ((destructor)) semihosting_exit(void) {
-	semihosting_syscall(REPORT_EXCEPTION, ApplicationExit);
+  semihosting_syscall(REPORT_EXCEPTION, ApplicationExit);
 }
 #endif /* defined(LM3S) */
 
@@ -200,8 +202,8 @@ static void clock_setup(enum clock_mode clock)
   (void)clock;
   WDT_CR = WDT_CR_KEY | WDT_CR_WDRSTT;
   WDT_MR = WDT_MR_WDDIS | WDT_MR_WDDBGHLT | WDT_MR_WDIDLEHLT;
-	pmc_peripheral_clock_enable(6);
-	pmc_peripheral_clock_enable(7);
+  pmc_peripheral_clock_enable(6);
+  pmc_peripheral_clock_enable(7);
   CKGR_MOR = (CKGR_MOR & ~CKGR_MOR_MOSCRCF_MASK) | CKGR_MOR_MOSCRCF_12MHZ | CKGR_MOR_KEY;
   /* Without the FAM its *slightly* faster, but the Chip Manual says that with 0
      WS we need the FAM? (but still works without...) */
@@ -245,12 +247,12 @@ void usart_setup()
   usart_disable_tx_interrupt(SERIAL_USART);
   usart_enable(SERIAL_USART);
 #elif defined(SAM3X8E)
-	pmc_peripheral_clock_enable(11);
-	pmc_peripheral_clock_enable(8);
-	gpio_init(PIOA, SERIAL_PINS, GPIO_FLAG_PERIPHA | GPIO_FLAG_PULL_UP);
+  pmc_peripheral_clock_enable(11);
+  pmc_peripheral_clock_enable(8);
+  gpio_init(PIOA, SERIAL_PINS, GPIO_FLAG_PERIPHA | GPIO_FLAG_PULL_UP);
   UART_CR = UART_CR_RSTRX | UART_CR_RSTTX | UART_CR_RXDIS | UART_CR_TXDIS;
   UART_MR = UART_MR_PAR_NO | UART_MR_CHMODE_NORMAL;
-	UART_BRGR = (MCLK / SERIAL_BAUD) >> 4;
+  UART_BRGR = (MCLK / SERIAL_BAUD) >> 4;
   UART_IDR = ~0;
   UART_CR = UART_CR_RXEN | UART_CR_TXEN;
 #endif
@@ -329,6 +331,29 @@ void* __wrap__sbrk (int incr)
 size_t hal_get_stack_size(void)
 {
   register char* cur_stack;
-	__asm__ volatile ("mov %0, sp" : "=r" (cur_stack));
+  __asm__ volatile ("mov %0, sp" : "=r" (cur_stack));
   return cur_stack - heap_end;
 }
+
+#else
+
+#include <stdio.h>
+
+void hal_setup(const enum clock_mode clock){
+  (void)clock;
+  return;
+}
+
+void hal_send_str(const char* in){
+  printf("%s\n", in);
+}
+
+uint64_t hal_get_time(void){
+  return 0;
+}
+
+#endif
+
+
+
+

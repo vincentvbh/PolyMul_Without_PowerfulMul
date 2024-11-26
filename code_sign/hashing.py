@@ -21,7 +21,7 @@ testedList = [["keygen", "keypair cycles:"],
               ["verifyhash", "verify hash cycles:"]
              ]
 schemeList = ["dilithium2", "dilithium3", "dilithium5"]
-impleList = [ "ref", "old", "plant", "asmspeed"]
+impleList = [ "ref", "plant", "asmspeed"]
 cpu = "m3"
 
 runned = []
@@ -43,8 +43,7 @@ def getFlash(binary):
 def makeAll():
     if Settings.CLEAN == True:
         subprocess.check_call(f"make clean", shell=True)
-    subprocess.check_call(f"sh makelib.sh", shell=True)
-    subprocess.check_call(f"make -j {Settings.JOBS} ITERATIONS={iterations} PLATFORM={Settings.PLATFORM}", shell=True)
+    subprocess.check_call(f"make all -j {Settings.JOBS} ITERATIONS={iterations} PLATFORM={Settings.PLATFORM}", shell=True)
 
 def run_bench(scheme, impl):
     binary = getBinary(scheme, impl)

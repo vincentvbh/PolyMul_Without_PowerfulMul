@@ -5,6 +5,10 @@
 #include <stdint.h>
 #include <string.h>
 
+#ifndef ITERATIONS
+#define ITERATIONS 100
+#endif
+
 #define MAX(a,b) (((a)>(b))?(a):(b))
 
 #define printcycles(S, U) send_unsignedll((S), (U))

@@ -29,8 +29,7 @@ def getFlash(binary):
 def makeAll():
     if Settings.CLEAN == True:
         subprocess.check_call(f"make clean", shell=True)
-    subprocess.check_call(f"sh makelib.sh", shell=True)
-    subprocess.check_call(f"make -j {Settings.JOBS} ITERATIONS={iterations} PLATFORM={Settings.PLATFORM}", shell=True)
+    subprocess.check_call(f"make all -j {Settings.JOBS} ITERATIONS={iterations} PLATFORM={Settings.PLATFORM}", shell=True)
 
 def test(scheme, impl):
     binary = getBinary(scheme, impl)

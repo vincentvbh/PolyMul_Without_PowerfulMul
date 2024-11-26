@@ -11,8 +11,6 @@
 **/*.bin
 **/*.elf
 
-**/obj
-
 **/*.pdf
 
 **/.DS_Store
