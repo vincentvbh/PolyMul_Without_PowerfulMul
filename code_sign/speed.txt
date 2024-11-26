@@ -1,0 +1,42 @@
+speed measurements written on 2024-11-26 23:02:34.200804+00:00; iterations=100
+
+m3 results for dilithium2 (impl=m3ref)
+dilithium2m3refkeygen: 1924k
+dilithium2m3refsign: 8101k
+dilithium2m3refverify: 2149k
+
+m3 results for dilithium2 (impl=m3plant)
+dilithium2m3plantkeygen: 1765k
+dilithium2m3plantsign: 5212k
+dilithium2m3plantverify: 1596k
+
+m3 results for dilithium2 (impl=m3asmspeed)
+dilithium2m3asmspeedkeygen: 1541k
+dilithium2m3asmspeedsign: 4251k
+dilithium2m3asmspeedverify: 1509k
+
+m3 results for dilithium3 (impl=m3ref)
+dilithium3m3refkeygen: 3280k
+dilithium3m3refsign: 11651k
+dilithium3m3refverify: 3494k
+
+m3 results for dilithium3 (impl=m3plant)
+dilithium3m3plantkeygen: 2944k
+dilithium3m3plantsign: 7447k
+dilithium3m3plantverify: 2660k
+
+m3 results for dilithium3 (impl=m3asmspeed)
+dilithium3m3asmspeedkeygen: 2669k
+dilithium3m3asmspeedsign: 6530k
+dilithium3m3asmspeedverify: 2521k
+
+m3 results for dilithium5 (impl=m3plant)
+dilithium5m3plantkeygen: 4924k
+dilithium5m3plantsign: 20183k
+dilithium5m3plantverify: 4525k
+
+m3 results for dilithium5 (impl=m3asmspeed)
+dilithium5m3asmspeedkeygen: 4449k
+dilithium5m3asmspeedsign: 18385k
+dilithium5m3asmspeedverify: 4294k
+
