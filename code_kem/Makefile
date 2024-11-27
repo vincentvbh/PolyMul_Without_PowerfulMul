@@ -59,7 +59,9 @@ opencm3_lib:
 		fi
 	make -C $(OPENCM3_DIR)
 
-PRIMITIVE_PREFIX      = crypto_kem
+PRIMITIVE_PREFIX     ?= crypto_kem
+SOURCE_ROOT_PATH     ?= crypto_kem
+TESTS_ROOT_PATH      ?= crypto_kem
 
 ALL_ELF = \
 	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3ref_test.elf \

@@ -1,7 +1,4 @@
 
-SOURCE_ROOT_PATH      = crypto_sign
-TESTS_ROOT_PATH       = crypto_sign
-
 define schemelib_armv7-m
 $(1)_$(2)_PATH        = $$(SOURCE_ROOT_PATH)/$(3)/$(4)
 $(1)_$(2)_SOURCES     = $$(wildcard $$($(1)_$(2)_PATH)/*.c) $$(wildcard $$($(1)_$(2)_PATH)/*.s) $$(wildcard $$($(1)_$(2)_PATH)/*.S)

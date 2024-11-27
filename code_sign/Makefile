@@ -59,7 +59,9 @@ opencm3_lib:
 		fi
 	make -C $(OPENCM3_DIR)
 
-PRIMITIVE_PREFIX      = crypto_sign
+PRIMITIVE_PREFIX     ?= crypto_sign
+SOURCE_ROOT_PATH     ?= crypto_sign
+TESTS_ROOT_PATH      ?= crypto_sign
 
 ALL_ELF = \
 	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3ref_test.elf \
