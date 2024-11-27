@@ -2,6 +2,7 @@
 /* taken from SUPERCOP (https://bench.cr.yp.to)     */
 
 #include "api.h"
+#include "sign.h"
 #include "randombytes.h"
 #include "hal.h"
 

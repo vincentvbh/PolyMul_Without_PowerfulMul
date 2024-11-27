@@ -1,4 +1,5 @@
 #include "api.h"
+#include "sign.h"
 #include "randombytes.h"
 #include "hal.h"
 
