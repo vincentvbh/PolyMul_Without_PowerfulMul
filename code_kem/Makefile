@@ -130,7 +130,7 @@ TEST_ELF = \
 	elf/$(PRIMITIVE_PREFIX)_firesaber_m3speed_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_firesaber_m3speed_testvectors.elf
 
-TEST_OBJ_ARMv7 = $(TEST_ELF)
+TEST_OBJ_ARMv7 = $(patsubst elf/%, obj_armv7/%, $(patsubst %.elf, %, $(TEST_ELF)))
 
 .PHONY: all all_armv7 clean libclean
 
@@ -159,6 +159,7 @@ clean: libclean
 	find . -name '*.o' -delete
 	rm -f elf/*
 	rm -f obj/*
+	rm -f obj_armv7/*
 
 
 
