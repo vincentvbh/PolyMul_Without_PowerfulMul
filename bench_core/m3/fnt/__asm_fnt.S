@@ -3,7 +3,7 @@
 #include "macros_fnt.i"
 
 .syntax unified
-.cpu cortex-m3
+
 
 .align 4
 .global __asm_FNT257

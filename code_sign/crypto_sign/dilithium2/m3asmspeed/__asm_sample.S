@@ -1,7 +1,7 @@
 
 #include "params.h"
 
-.cpu cortex-m3
+
 .syntax unified
 
 // asm_rej_uniform(int32_t *a,unsigned int len,const unsigned char *buf, unsigned int buflen);

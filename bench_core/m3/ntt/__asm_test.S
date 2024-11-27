@@ -2,7 +2,7 @@
 #include "macros.i"
 #include "mulmod.i"
 
-.cpu cortex-m3
+
 .syntax unified
 
 .align 4

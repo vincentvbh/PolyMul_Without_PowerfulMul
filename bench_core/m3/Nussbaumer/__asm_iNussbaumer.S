@@ -2,7 +2,7 @@
 #include "macros.i"
 
 .syntax unified
-.cpu cortex-m3
+
 
 .align 4
 .global __asm_iNussbaumer_neg256_0_1_2_3

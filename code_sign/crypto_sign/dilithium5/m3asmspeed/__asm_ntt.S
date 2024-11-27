@@ -4,7 +4,7 @@
 #include "butterflies.i"
 #include "reduce.i"
 
-.cpu cortex-m3
+
 .syntax unified
 
 .align 4

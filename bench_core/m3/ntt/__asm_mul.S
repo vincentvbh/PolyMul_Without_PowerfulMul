@@ -7,7 +7,7 @@
 #include "reduce.i"
 
 .syntax unified
-.cpu cortex-m3
+
 
 .align 4
 .global __asm_point_mul_pre
