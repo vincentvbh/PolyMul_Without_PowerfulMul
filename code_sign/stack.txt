@@ -1,4 +1,4 @@
-stack measurements written on 2024-11-26 23:17:19.810057+00:00; iterations=1
+stack measurements written on 2024-11-27 20:42:42.785072+00:00; iterations=1
 
 m3 results for dilithium2 (impl=m3ref)
 dilithium2m3refkeygen: 38460

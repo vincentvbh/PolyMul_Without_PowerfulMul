@@ -1,4 +1,4 @@
-stack measurements written on 2024-11-27 00:12:41.752553+00:00; iterations=1
+stack measurements written on 2024-11-27 20:28:32.330399+00:00; iterations=1
 
 m3 results for lightsaber (impl=m3ref)
 lightsaberm3refkeygen: 4220

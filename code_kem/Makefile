@@ -33,9 +33,9 @@ OPENCM3_DIR             = ./libopencm3
 OPENCM3_OBJS            = $(COMMON_PATH)/hal-opencm3.o
 OPENCM3_LIBNAME         = opencm3_stm32f2
 
-PLATFORM               ?= nucleo-f207zg
+DEVICE                 ?= stm32f207zg
 
-ARMv7-M_LDSCRIPT        = $(COMMON_PATH)/$(PLATFORM).ld
+ARMv7-M_LDSCRIPT        = $(COMMON_PATH)/$(DEVICE).ld
 
 ARMv7-M_CROSS_CFLAGS   += -O3 -Wall \
 						  -I$(OPENCM3_DIR)/include -I$(COMMON_PATH) \
