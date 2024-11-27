@@ -1,0 +1,74 @@
+hashing measurements written on 2024-11-27 00:59:51.446458+00:00; iterations=100
+
+m3 results for lightsaber (impl=m3ref)
+lightsaberm3refkeygen: 3708k
+lightsaberm3refkeygenhash: 226k
+lightsaberm3refencap: 5116k
+lightsaberm3refencaphash: 316k
+lightsaberm3refdecap: 6716k
+lightsaberm3refdecaphash: 248k
+
+m3 results for lightsaber (impl=m3old)
+lightsaberm3oldkeygen: 465k
+lightsaberm3oldkeygenhash: 226k
+lightsaberm3oldencap: 630k
+lightsaberm3oldencaphash: 316k
+lightsaberm3olddecap: 687k
+lightsaberm3olddecaphash: 248k
+
+m3 results for lightsaber (impl=m3speed)
+lightsaberm3speedkeygen: 399k
+lightsaberm3speedkeygenhash: 218k
+lightsaberm3speedencap: 536k
+lightsaberm3speedencaphash: 308k
+lightsaberm3speeddecap: 569k
+lightsaberm3speeddecaphash: 240k
+
+m3 results for saber (impl=m3ref)
+saberm3refkeygen: 8014k
+saberm3refkeygenhash: 411k
+saberm3refencap: 10314k
+saberm3refencaphash: 534k
+saberm3refdecap: 12615k
+saberm3refdecaphash: 433k
+
+m3 results for saber (impl=m3old)
+saberm3oldkeygen: 855k
+saberm3oldkeygenhash: 411k
+saberm3oldencap: 1081k
+saberm3oldencaphash: 534k
+saberm3olddecap: 1156k
+saberm3olddecaphash: 433k
+
+m3 results for saber (impl=m3speed)
+saberm3speedkeygen: 736k
+saberm3speedkeygenhash: 396k
+saberm3speedencap: 921k
+saberm3speedencaphash: 518k
+saberm3speeddecap: 965k
+saberm3speeddecaphash: 417k
+
+m3 results for firesaber (impl=m3ref)
+firesaberm3refkeygen: 13676k
+firesaberm3refkeygenhash: 620k
+firesaberm3refencap: 17577k
+firesaberm3refencaphash: 765k
+firesaberm3refdecap: 20720k
+firesaberm3refdecaphash: 642k
+
+m3 results for firesaber (impl=m3old)
+firesaberm3oldkeygen: 1336k
+firesaberm3oldkeygenhash: 620k
+firesaberm3oldencap: 1611k
+firesaberm3oldencaphash: 765k
+firesaberm3olddecap: 1712k
+firesaberm3olddecaphash: 642k
+
+m3 results for firesaber (impl=m3speed)
+firesaberm3speedkeygen: 1134k
+firesaberm3speedkeygenhash: 595k
+firesaberm3speedencap: 1360k
+firesaberm3speedencaphash: 739k
+firesaberm3speeddecap: 1427k
+firesaberm3speeddecaphash: 617k
+
