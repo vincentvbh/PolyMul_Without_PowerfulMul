@@ -311,7 +311,7 @@ void BS2POLVECq(const uint8_t bytes[SABER_POLYVECBYTES], uint16_t data[SABER_L][
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* This function reduces its input mod 2**4 */
-void POLmu2BS(uint8_t bytes[SABER_POLYSECRETBYTES], const uint16_t data[SABER_N])
+void POLmu2BS(uint8_t bytes[SABER_POLYCOMPRESSEDSECRETBYTES], const uint16_t data[SABER_N])
 {
     size_t j;
     const uint16_t *in = data;
@@ -324,7 +324,7 @@ void POLmu2BS(uint8_t bytes[SABER_POLYSECRETBYTES], const uint16_t data[SABER_N]
 }
 
 /* This function does NOT reduce its output mod q */
-void BS2POLmu(const uint8_t bytes[SABER_POLYSECRETBYTES], uint16_t data[SABER_N])
+void BS2POLmu(const uint8_t bytes[SABER_POLYCOMPRESSEDSECRETBYTES], uint16_t data[SABER_N])
 {
     size_t j;
     const uint8_t *in = bytes;
@@ -343,6 +343,5 @@ void BS2POLmu(const uint8_t bytes[SABER_POLYSECRETBYTES], uint16_t data[SABER_N]
         out += 2;
     }
 }
-
 
 
