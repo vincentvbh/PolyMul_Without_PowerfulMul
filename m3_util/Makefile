@@ -41,10 +41,12 @@ endef
 
 all: \
     obj/stm32f207zg.ld \
-    obj/lm3s811.ld
+    obj/lm3s6965.ld
 
 $(eval $(call gen_link,stm32f207zg))
-$(eval $(call gen_link,lm3s811))
+$(eval $(call gen_link,lm3s6965))
+
+
 
 .PHONY: clean
 
