@@ -1,5 +1,3 @@
-
-
 #include <stdio.h>
 #include <stdint.h>
 #include <stddef.h>
@@ -86,7 +84,8 @@ struct commutative_ring naive_mod_coeff_ring =
         .subZ = subZ,
         .mulZ = mulZ,
         .expZ = expZ,
-        .modQ = Q};
+        .modQ = Q
+    };
 
 struct commutative_ring ntt_coeff_ring =
     {
@@ -96,13 +95,20 @@ struct commutative_ring ntt_coeff_ring =
         .subZ = subZ,
         .mulZ = montZ, //!Montgomery Multiplication
         .expZ = expZ,
-        .modQ = Q};
-
-
-
+        .modQ = Q
+    };
 
 int16_t streamlined_twiddle_table[NTT_N - 1];
 struct compress_profile profile;
+
+// ================
+int32_t streamlined_FNT_table[NTT_N] = {
+-164, -81, 361, -186, 3, 250, 120, -129, -308, 223, -16, -143, 362, -337, -131, -75, -36, 76, 98, 203, 282, -339, -255, 178, 270, 199, 34, -369, 192, -149, -10, -80, -346, -124, 2, 114, 147, -54, -272, -169, 288, 161, -15, -86, 51, -364, -267, 170, -226, -121, 188, -50, -24, 307, -191, 263, 157, -246, 128, 375, 180, -380, 279, -341, -379, 202, 220, 236, 21, 212, 71, -134, 151, 23, -112, -232, 227, -52, -148, 244, -252, -237, -83, -117, -333, -66, -247, -292, 352, -145, 238, -276, -194, -274, -70, 209, -115, -99, 14, 29, 260, -378, -366, 355, -291, 358, -105, 167, 357, -241, -331, -348, -44, -78, -222, -350, -168, -158, 201, 303, 330, -184, 127, 318, -278, -353, -354, 0,
+};
+
+int32_t streamlined_iFNT_table[NTT_N] = {
+164, -361, 81, -120, -250, -3, 186, 131, 337, -362, 143, 16, -223, 308, 129, 10, 149, -192, 369, -34, -199, -270, -178, 255, 339, -282, -203, -98, -76, 36, 75, -279, 380, -180, -375, -128, 246, -157, -263, 191, -307, 24, 50, -188, 121, 226, -170, 267, 364, -51, 86, 15, -161, -288, 169, 272, 54, -147, -114, -2, 124, 346, 80, 354, 353, 278, -318, -127, 184, -330, -303, -201, 158, 168, 350, 222, 78, 44, 348, 331, 241, -357, -167, 105, -358, 291, -355, 366, 378, -260, -29, -14, 99, 115, -209, 70, 274, 194, 276, -238, 145, -352, 292, 247, 66, 333, 117, 83, 237, 252, -244, 148, 52, -227, 232, 112, -23, -151, 134, -71, -212, -21, -236, -220, -202, 379, 341, 0,
+};
 
 // ================
 int main(void)
@@ -141,6 +147,7 @@ int main(void)
     zeta = omegaQ;
     naive_mod_coeff_ring.expZ(&omega, &zeta, 2);
     gen_streamlined_DWT_table(streamlined_twiddle_table, &scale, &omega, &zeta, profile, 0, naive_mod_coeff_ring);
+    for(size_t i = 0; i < NTT_N; i++) assert(streamlined_twiddle_table[i] == streamlined_FNT_table[i]);
 
     compressed_CT_NTT(poly1, 0, LOGNTT_N - 1, streamlined_twiddle_table, profile, ntt_coeff_ring);
     compressed_CT_NTT(poly2, 0, LOGNTT_N - 1, streamlined_twiddle_table, profile, ntt_coeff_ring);
@@ -157,7 +164,8 @@ int main(void)
     scale = RmodQ;
     zeta = omegainvQ;
     naive_mod_coeff_ring.expZ(&omega, &zeta, 2);
-    gen_streamlined_DWT_table(streamlined_twiddle_table, &scale, &omega, &zeta, profile, 0, naive_mod_coeff_ring);
+    gen_streamlined_DWT_table(streamlined_twiddle_table, &scale, &omega, &zeta, profile, 0, naive_mod_coeff_ring);    
+    for(size_t i = 0; i < NTT_N; i++) assert(streamlined_twiddle_table[i] == streamlined_iFNT_table[i]);   
 
     compressed_GS_NTT(res, 0, LOGNTT_N - 1, streamlined_twiddle_table, profile, ntt_coeff_ring);
 

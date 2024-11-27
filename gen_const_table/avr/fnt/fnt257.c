@@ -82,7 +82,17 @@ int16_t streamlined_twiddle_table[NTT_N - 1];
 struct compress_profile profile;
 
 // ================
+int32_t streamlined_FNT_table[NTT_N] = {
+16, 4, 64, 2, 32, 8, 128, -60, 68, 17, 15, -120, -121, 34, 30, -35, -46, 117, 73, -70, -92, -23, -111, 44, -67, -81, -11, 88, 123, 95, -22, -42, 99, 89, -118, -84, -59, -79, 21, -50, -29, 57, -116, -100, -58, 114, 25, -72, -124, -31, 18, 113, 9, -62, 36, -49, -13, 61, -52, -98, -26, 122, -104, -27, 82, -108, 71, -54, -93, 41, -115, 78, -37, 55, 109, -101, -74, 110, -39, -83, -43, -75, 85, 91, -86, 107, -87, 97, 10, -126, 40, -63, 20, 5, 80, 106, -103, -90, 102, -45, 51, 77, -53, 65, 12, 3, 48, -127, 24, 6, 96, -112, 7, 66, 28, 33, 14, -125, 56, 38, 94, -105, 119, 76, -69, 47, -19, 0,
+};
 
+int32_t mul_FNT_table[NTT_N >> 1] = {
+-27, 82, -108, 71, -54, -93, 41, -115, 78, -37, 55, 109, -101, -74, 110, -39, -83, -43, -75, 85, 91, -86, 107, -87, 97, 10, -126, 40, -63, 20, 5, 80, 106, -103, -90, 102, -45, 51, 77, -53, 65, 12, 3, 48, -127, 24, 6, 96, -112, 7, 66, 28, 33, 14, -125, 56, 38, 94, -105, 119, 76, -69, 47, -19, 
+};
+
+int32_t streamlined_iFNT_table[NTT_N] = {
+-16, -64, -4, -128, -8, -32, -2, -30, -34, 121, 120, -15, -17, -68, 60, 22, -95, -123, -88, 11, 81, 67, -44, 111, 23, 92, 70, -73, -117, 46, 35, 104, -122, 26, 98, 52, -61, 13, 49, -36, 62, -9, -113, -18, 31, 124, 72, -25, -114, 58, 100, 116, -57, 29, 50, -21, 79, 59, 84, 118, -89, -99, 42, 19, -47, 69, -76, -119, 105, -94, -38, -56, 125, -14, -33, -28, -66, -7, 112, -96, -6, -24, 127, -48, -3, -12, -65, 53, -77, -51, 45, -102, 90, 103, -106, -80, -5, -20, 63, -40, 126, -10, -97, 87, -107, 86, -91, -85, 75, 43, 83, 39, -110, 74, 101, -109, -55, 37, -78, 115, -41, 93, 54, -71, 108, -82, 27, 0,
+};
 
 int main(void)
 {
@@ -119,6 +129,7 @@ int main(void)
     omega = OMEGA;
     scale = 1;
     gen_streamlined_DWT_table(streamlined_twiddle_table, &scale, &omega, &zeta, profile, 0, naive_mod_coeff_ring);
+    for(size_t i = 0; i < NTT_N; i++) assert(streamlined_twiddle_table[i] == streamlined_FNT_table[i]);
 
     compressed_CT_NTT(poly1, 0, LOGNTT_N - 1, streamlined_twiddle_table, profile, ntt_coeff_ring);
     compressed_CT_NTT(poly2, 0, LOGNTT_N - 1, streamlined_twiddle_table, profile, ntt_coeff_ring);
@@ -127,6 +138,7 @@ int main(void)
     scale = ZETA;
     omega = OMEGA;
     gen_mul_table(streamlined_twiddle_table, &scale, &omega, profile, naive_mod_coeff_ring);
+    for(size_t i = 0; i < NTT_N >> 1; i++) assert(streamlined_twiddle_table[i] == mul_FNT_table[i]);
 
     for(size_t i = 0; i < ARRAY_N; i += 2 * BASE_N){
         twiddle = streamlined_twiddle_table[i / (2 * BASE_N)];
@@ -140,7 +152,8 @@ int main(void)
     omega = OMEGA_INV;
     scale = 1;
     gen_streamlined_DWT_table(streamlined_twiddle_table, &scale, &omega, &zeta, profile, 0, naive_mod_coeff_ring);
-
+    for(size_t i = 0; i < NTT_N; i++) assert(streamlined_twiddle_table[i] == streamlined_iFNT_table[i]);
+    
     compressed_GS_NTT(res, 0, LOGNTT_N - 1, streamlined_twiddle_table, profile, ntt_coeff_ring);
 
     //* freeze result : res in (-Q/2, Q/2) ==> res in (0, Q)

@@ -7,7 +7,9 @@ In each of the following folders:
 - `avr/ntt_barrett`
 - `avr/fnt`
 typing
-`make` will produce the binary `gen`.
+`make` will produce the binary `gen`
 Typing `./gen` to generate tables of constants and compare them to the ones used in our implementations.
+(`avr/fnt` provides `test_fnt257`, `test_fnt769` binary instead of `gen`. )
+
 
 
