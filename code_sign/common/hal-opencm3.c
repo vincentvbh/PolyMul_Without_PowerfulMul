@@ -1,5 +1,7 @@
 #include "hal.h"
 
+#ifndef CROSS_ARMv7_HOSTTEST
+
 #define SERIAL_BAUD 9600
 
 #include <libopencm3/cm3/dwt.h>
@@ -332,6 +334,30 @@ size_t hal_get_stack_size(void)
   __asm__ volatile ("mov %0, sp" : "=r" (cur_stack));
   return cur_stack - heap_end;
 }
+
+#else
+
+#include <stdio.h>
+
+void hal_setup(const enum clock_mode clock){
+  (void)clock;
+  return;
+}
+
+void hal_send_str(const char* in){
+  printf("%s\n", in);
+}
+
+uint64_t hal_get_time(void){
+  return 0;
+}
+
+size_t hal_get_stack_size(void){
+  return 0;
+}
+
+#endif
+
 
 
 

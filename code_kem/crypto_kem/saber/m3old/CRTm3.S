@@ -2,7 +2,7 @@
 #include "macros.i"
 
 .syntax unified
-.cpu cortex-m3
+
 
 #ifndef LOOP
 #define LOOP

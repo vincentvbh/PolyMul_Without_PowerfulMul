@@ -8,7 +8,7 @@
 #endif
 
 .syntax unified
-.cpu cortex-m3
+
 
 .align 2
 .global __asm_base_mul_acc

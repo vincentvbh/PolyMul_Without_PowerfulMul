@@ -1,7 +1,7 @@
 
 
 .syntax unified
-.cpu cortex-m3
+
 
 .align 2
 .global __asm_poly_add

@@ -24,7 +24,7 @@ static inline void BS2POLmsg(const uint8_t bytes[SABER_KEYBYTES], uint16_t data[
 static inline void BS2POLp(const uint8_t bytes[SABER_POLYCOMPRESSEDBYTES], uint16_t data[SABER_N]);
 static inline void BS2POLq(const uint8_t bytes[SABER_POLYBYTES], uint16_t data[SABER_N]);
 static inline void BS2POLT(const uint8_t bytes[SABER_SCALEBYTES_KEM], uint16_t data[SABER_N]);
-static inline void BS2POLmu(const uint8_t bytes[SABER_POLYSECRETBYTES], uint16_t data[SABER_N]);
+static inline void BS2POLmu(const uint8_t bytes[SABER_POLYCOMPRESSEDSECRETBYTES], uint16_t data[SABER_N]);
 
 void POLVECp2BS(uint8_t bytes[SABER_POLYVECCOMPRESSEDBYTES], const uint16_t data[SABER_L][SABER_N]);
 void POLVECq2BS(uint8_t bytes[SABER_POLYVECBYTES], const uint16_t data[SABER_L][SABER_N]);
@@ -62,7 +62,7 @@ static inline void BS2POLT(const uint8_t bytes[SABER_SCALEBYTES_KEM], uint16_t d
 #endif
 }
 
-static inline void BS2POLmu(const uint8_t bytes[SABER_POLYSECRETBYTES], uint16_t data[SABER_N]){
+static inline void BS2POLmu(const uint8_t bytes[SABER_POLYCOMPRESSEDSECRETBYTES], uint16_t data[SABER_N]){
     __asm_4_to_16(data, bytes);
 }
 

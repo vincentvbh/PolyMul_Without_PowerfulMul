@@ -7,7 +7,7 @@
 #endif
 
 .syntax unified
-.cpu cortex-m3
+
 
 .align 2
 .global __asm_negacyclic_ntt
@@ -105,7 +105,7 @@ __asm_negacyclic_ntt:
     pop {r4-r12, pc}
 
 .syntax unified
-.cpu cortex-m4
+
 
 .align 2
 .global __asm_negacyclic_ntt_light
