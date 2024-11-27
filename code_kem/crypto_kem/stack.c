@@ -1,4 +1,5 @@
 #include "api.h"
+#include "kem.h"
 #include "randombytes.h"
 #include "hal.h"
 #include "sendfn.h"

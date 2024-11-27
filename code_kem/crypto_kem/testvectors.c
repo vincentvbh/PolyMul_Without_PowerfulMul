@@ -1,8 +1,10 @@
 
+
 /* Deterministic randombytes by Daniel J. Bernstein */
 /* taken from SUPERCOP (https://bench.cr.yp.to)     */
 
 #include "api.h"
+#include "kem.h"
 #include "randombytes.h"
 #include "hal.h"
 
@@ -10,9 +12,7 @@
 #include <stdint.h>
 #include <string.h>
 
-#define NTESTS 2
-
-typedef uint32_t uint32;
+#define NTESTS 5
 
 static void printbytes(const unsigned char *x, unsigned long long xlen)
 {
@@ -33,6 +33,8 @@ int main(void)
   int i,j;
 
   hal_setup(CLOCK_FAST);
+
+  void init_randombytes();
 
   for(i = 0; i < 32; i++){
     hal_send_str("==========================");
@@ -68,7 +70,7 @@ int main(void)
     }
   }
 
-  hal_send_str("#\n");
+  hal_send_str("#");
   return 0;
 }
 

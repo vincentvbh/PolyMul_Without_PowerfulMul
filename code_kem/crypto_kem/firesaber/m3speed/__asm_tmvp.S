@@ -2,7 +2,7 @@
 #include "macros.i"
 
 .syntax unified
-.cpu cortex-m3
+
 
 // TC4 with {0, 1, -1, 2, -2, 1/2, \infty}
 // .align 4

@@ -46,11 +46,8 @@
 
 #define SABER_INDCPA_PUBLICKEYBYTES (SABER_POLYVECCOMPRESSEDBYTES + SABER_SEEDBYTES)
 
-#ifdef SABER_COMPRESS_SECRETKEY
-    #define SABER_POLYSECRETBYTES (4 * SABER_N / 8)  // secret key is stored as 4-bit value in [-mu/2, mu/2]
-#else
-    #define SABER_POLYSECRETBYTES SABER_POLYBYTES // secret key is stored as q-bit value
-#endif
+#define SABER_POLYCOMPRESSEDSECRETBYTES (4 * SABER_N / 8) // secret key is stored as 4-bit value in [-mu/2, mu/2]
+#define SABER_POLYSECRETBYTES SABER_POLYBYTES // secret key is stored as q-bit value
 
 #define SABER_INDCPA_SECRETKEYBYTES (SABER_L * SABER_POLYSECRETBYTES)
 #define SABER_PUBLICKEYBYTES (SABER_INDCPA_PUBLICKEYBYTES)

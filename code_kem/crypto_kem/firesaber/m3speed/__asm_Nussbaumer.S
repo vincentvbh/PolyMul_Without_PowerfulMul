@@ -2,7 +2,7 @@
 #include "macros.i"
 
 .syntax unified
-.cpu cortex-m3
+
 
 // 0
 // 0, 8

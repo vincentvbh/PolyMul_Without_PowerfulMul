@@ -1,4 +1,6 @@
+
 #include "api.h"
+#include "kem.h"
 #include "randombytes.h"
 #include "hal.h"
 
@@ -46,15 +48,15 @@ static int test_keys(void)
 
   for(i=0; i<NTESTS; i++)
   {
-    //Alice generates a public key
+    // Alice generates a public key
     crypto_kem_keypair(pk+8, sk_a+8);
     hal_send_str("DONE key pair generation!");
 
-    //Bob derives a secret key and creates a response
+    // Bob derives a secret key and creates a response
     crypto_kem_enc(sendb+8, key_b+8, pk+8);
     hal_send_str("DONE encapsulation!");
 
-    //Alice uses Bobs response to get her secret key
+    // Alice uses Bobs response to get her secret key
     crypto_kem_dec(key_a+8, sendb+8, sk_a+8);
     hal_send_str("DONE decapsulation!");
 
@@ -90,7 +92,8 @@ int main(void)
     hal_send_str("==========================");
   }
   test_keys();
-  hal_send_str("#\n");
+  hal_send_str("#");
 
   return 0;
 }
+

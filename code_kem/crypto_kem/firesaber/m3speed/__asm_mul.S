@@ -2,7 +2,7 @@
 #include "macros.i"
 
 .syntax unified
-.cpu cortex-m3
+
 
 // .align 4
 // .global __asm_mul_neg4x4

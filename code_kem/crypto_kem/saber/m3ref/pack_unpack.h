@@ -23,8 +23,9 @@ uint32_t POLVECp2BS_cmp(const uint8_t bytes[SABER_POLYVECCOMPRESSEDBYTES], const
 void BS2POLVECq(const uint8_t bytes[SABER_POLYVECBYTES], uint16_t data[SABER_L][SABER_N]);
 void BS2POLVECp(const uint8_t bytes[SABER_POLYVECCOMPRESSEDBYTES], uint16_t data[SABER_L][SABER_N]);
 
-void BS2POLmu(const uint8_t bytes[SABER_N / 2], uint16_t data[SABER_N]);
-void POLmu2BS(uint8_t bytes[SABER_N / 2], const uint16_t data[SABER_N]);
+void BS2POLmu(const uint8_t bytes[SABER_POLYCOMPRESSEDSECRETBYTES], uint16_t data[SABER_N]);
+void POLmu2BS(uint8_t bytes[SABER_POLYCOMPRESSEDSECRETBYTES], const uint16_t data[SABER_N]);
+
 
 #endif
 
