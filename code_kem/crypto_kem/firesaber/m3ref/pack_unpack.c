@@ -344,21 +344,5 @@ void BS2POLmu(const uint8_t bytes[SABER_POLYSECRETBYTES], uint16_t data[SABER_N]
     }
 }
 
-void POLVECmu2BS(uint8_t bytes[SABER_INDCPA_SECRETKEYBYTES], const uint16_t data[SABER_L][SABER_N])
-{
-    size_t i;
-    for (i = 0; i < SABER_L; i++) {
-        POLmu2BS(bytes + i * SABER_POLYSECRETBYTES, data[i]);
-    }
-}
-
-void BS2POLVECmu(const uint8_t bytes[SABER_INDCPA_SECRETKEYBYTES], uint16_t data[SABER_L][SABER_N])
-{
-    size_t i;
-    for (i = 0; i < SABER_L; i++) {
-        BS2POLmu(bytes + i * SABER_POLYSECRETBYTES, data[i]);
-    }
-}
-
 
 
