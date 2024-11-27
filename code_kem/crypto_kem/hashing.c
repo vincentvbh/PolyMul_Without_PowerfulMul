@@ -1,10 +1,15 @@
 
 #include "api.h"
 #include "hal.h"
+#include "randombytes.h"
 #include "sendfn.h"
 
 #include <stdint.h>
 #include <string.h>
+
+#ifndef ITERATIONS
+#define ITERATIONS 100
+#endif
 
 #define printcycles(S, U) send_unsignedll((S), (U))
 
@@ -24,6 +29,8 @@ int main(void)
   for(i = 0; i < 60; i++){
     hal_send_str("==========================");
   }
+
+  init_randombytes();
 
   for(i=0;i<ITERATIONS; i++)
   {

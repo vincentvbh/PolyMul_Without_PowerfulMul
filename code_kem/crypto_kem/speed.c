@@ -1,5 +1,6 @@
 #include "api.h"
 #include "hal.h"
+#include "randombytes.h"
 #include "sendfn.h"
 
 #include <stdint.h>
@@ -27,6 +28,8 @@ int main(void)
   for(i = 0; i < 60; i++){
     hal_send_str("==========================");
   }
+
+  init_randombytes();
 
   for(i=0;i<ITERATIONS; i++)
   {

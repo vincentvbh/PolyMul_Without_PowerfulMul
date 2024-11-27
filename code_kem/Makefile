@@ -64,44 +64,71 @@ PRIMITIVE_PREFIX      = crypto_kem
 ALL_ELF = \
 	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3ref_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3ref_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3ref_hashing.elf \
 	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3ref_speed.elf \
+	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3ref_stack.elf \
 	elf/$(PRIMITIVE_PREFIX)_saber_m3ref_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_saber_m3ref_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_saber_m3ref_hashing.elf \
 	elf/$(PRIMITIVE_PREFIX)_saber_m3ref_speed.elf \
+	elf/$(PRIMITIVE_PREFIX)_saber_m3ref_stack.elf \
 	elf/$(PRIMITIVE_PREFIX)_firesaber_m3ref_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_firesaber_m3ref_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_firesaber_m3ref_hashing.elf \
 	elf/$(PRIMITIVE_PREFIX)_firesaber_m3ref_speed.elf \
+	elf/$(PRIMITIVE_PREFIX)_firesaber_m3ref_stack.elf \
 	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3old_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3old_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3old_hashing.elf \
 	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3old_speed.elf \
+	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3old_stack.elf \
 	elf/$(PRIMITIVE_PREFIX)_saber_m3old_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_saber_m3old_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_saber_m3old_hashing.elf \
 	elf/$(PRIMITIVE_PREFIX)_saber_m3old_speed.elf \
+	elf/$(PRIMITIVE_PREFIX)_saber_m3old_stack.elf \
 	elf/$(PRIMITIVE_PREFIX)_firesaber_m3old_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_firesaber_m3old_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_firesaber_m3old_hashing.elf \
 	elf/$(PRIMITIVE_PREFIX)_firesaber_m3old_speed.elf \
+	elf/$(PRIMITIVE_PREFIX)_firesaber_m3old_stack.elf \
 	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3speed_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3speed_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3speed_hashing.elf \
 	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3speed_speed.elf \
+	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3speed_stack.elf \
 	elf/$(PRIMITIVE_PREFIX)_saber_m3speed_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_saber_m3speed_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_saber_m3speed_hashing.elf \
 	elf/$(PRIMITIVE_PREFIX)_saber_m3speed_speed.elf \
+	elf/$(PRIMITIVE_PREFIX)_saber_m3speed_stack.elf \
 	elf/$(PRIMITIVE_PREFIX)_firesaber_m3speed_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_firesaber_m3speed_testvectors.elf \
-	elf/$(PRIMITIVE_PREFIX)_firesaber_m3speed_speed.elf
+	elf/$(PRIMITIVE_PREFIX)_firesaber_m3speed_hashing.elf \
+	elf/$(PRIMITIVE_PREFIX)_firesaber_m3speed_speed.elf \
+	elf/$(PRIMITIVE_PREFIX)_firesaber_m3speed_stack.elf
 
-BENCH_ELF = \
-	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3ref_speed.elf \
-	elf/$(PRIMITIVE_PREFIX)_saber_m3ref_speed.elf \
-	elf/$(PRIMITIVE_PREFIX)_firesaber_m3ref_speed.elf \
-	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3old_speed.elf \
-	elf/$(PRIMITIVE_PREFIX)_saber_m3old_speed.elf \
-	elf/$(PRIMITIVE_PREFIX)_firesaber_m3old_speed.elf \
-	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3speed_speed.elf \
-	elf/$(PRIMITIVE_PREFIX)_saber_m3speed_speed.elf \
-	elf/$(PRIMITIVE_PREFIX)_firesaber_m3speed_speed.elf
+TEST_ELF = \
+	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3ref_test.elf \
+	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3ref_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_saber_m3ref_test.elf \
+	elf/$(PRIMITIVE_PREFIX)_saber_m3ref_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_firesaber_m3ref_test.elf \
+	elf/$(PRIMITIVE_PREFIX)_firesaber_m3ref_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3old_test.elf \
+	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3old_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_saber_m3old_test.elf \
+	elf/$(PRIMITIVE_PREFIX)_saber_m3old_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_firesaber_m3old_test.elf \
+	elf/$(PRIMITIVE_PREFIX)_firesaber_m3old_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3speed_test.elf \
+	elf/$(PRIMITIVE_PREFIX)_lightsaber_m3speed_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_saber_m3speed_test.elf \
+	elf/$(PRIMITIVE_PREFIX)_saber_m3speed_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_firesaber_m3speed_test.elf \
+	elf/$(PRIMITIVE_PREFIX)_firesaber_m3speed_testvectors.elf
 
-TEST_OBJ_ARMv7 = $(filter-out $(BENCH_ELF), $(ALL_ELF))
+TEST_OBJ_ARMv7 = $(TEST_ELF)
 
 .PHONY: all all_armv7 clean libclean
 
@@ -112,6 +139,9 @@ all_armv7: $(TEST_OBJ_ARMv7)
 include scheme.mk
 
 # default rules
+
+$(HASH_PATH)/fips202-profile.o: $(HASH_PATH)/fips202.c opencm3_lib
+	$(ARMv7-M_CROSS_CC) $(ARMv7-M_CROSS_CFLAGS) -DPROFILE_HASHING -o $@ -c $<
 
 %.o: %.c opencm3_lib
 	$(ARMv7-M_CROSS_CC) $(ARMv7-M_CROSS_CFLAGS) -o $@ -c $<

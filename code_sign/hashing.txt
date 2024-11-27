@@ -1,0 +1,66 @@
+hashing measurements written on 2024-11-27 00:48:39.982937+00:00; iterations=100
+
+m3 results for dilithium2 (impl=m3ref)
+dilithium2m3refkeygen: 1937k
+dilithium2m3refkeygenhash: 1121k
+dilithium2m3refsign: 8313k
+dilithium2m3refsignhash: 2155k
+dilithium2m3refverify: 2159k
+dilithium2m3refverifyhash: 1065k
+
+m3 results for dilithium2 (impl=m3plant)
+dilithium2m3plantkeygen: 1779k
+dilithium2m3plantkeygenhash: 1183k
+dilithium2m3plantsign: 5352k
+dilithium2m3plantsignhash: 2155k
+dilithium2m3plantverify: 1606k
+dilithium2m3plantverifyhash: 1065k
+
+m3 results for dilithium2 (impl=m3asmspeed)
+dilithium2m3asmspeedkeygen: 1554k
+dilithium2m3asmspeedkeygenhash: 1121k
+dilithium2m3asmspeedsign: 4367k
+dilithium2m3asmspeedsignhash: 2155k
+dilithium2m3asmspeedverify: 1518k
+dilithium2m3asmspeedverifyhash: 1065k
+
+m3 results for dilithium3 (impl=m3ref)
+dilithium3m3refkeygen: 3301k
+dilithium3m3refkeygenhash: 2034k
+dilithium3m3refsign: 13344k
+dilithium3m3refsignhash: 3354k
+dilithium3m3refverify: 3511k
+dilithium3m3refverifyhash: 1873k
+
+m3 results for dilithium3 (impl=m3plant)
+dilithium3m3plantkeygen: 2966k
+dilithium3m3plantkeygenhash: 2034k
+dilithium3m3plantsign: 8497k
+dilithium3m3plantsignhash: 3354k
+dilithium3m3plantverify: 2677k
+dilithium3m3plantverifyhash: 1873k
+
+m3 results for dilithium3 (impl=m3asmspeed)
+dilithium3m3asmspeedkeygen: 2691k
+dilithium3m3asmspeedkeygenhash: 2034k
+dilithium3m3asmspeedsign: 7381k
+dilithium3m3asmspeedsignhash: 3354k
+dilithium3m3asmspeedverify: 2538k
+dilithium3m3asmspeedverifyhash: 1873k
+
+m3 results for dilithium5 (impl=m3plant)
+dilithium5m3plantkeygen: 4962k
+dilithium5m3plantkeygenhash: 3508k
+dilithium5m3plantsign: 18065k
+dilithium5m3plantsignhash: 11958k
+dilithium5m3plantverify: 4556k
+dilithium5m3plantverifyhash: 3348k
+
+m3 results for dilithium5 (impl=m3asmspeed)
+dilithium5m3asmspeedkeygen: 4487k
+dilithium5m3asmspeedkeygenhash: 3508k
+dilithium5m3asmspeedsign: 16470k
+dilithium5m3asmspeedsignhash: 11958k
+dilithium5m3asmspeedverify: 4325k
+dilithium5m3asmspeedverifyhash: 3348k
+

@@ -1,42 +1,10 @@
-#include <stdint.h>
+
 #include "randombytes.h"
 
-//TODO Maybe we do not want to use the hardware RNG for all randomness, but instead only read a seed and then expand that using fips202.
-
-#if defined(STM32)
-#include <libopencm3/stm32/rng.h>
-
-int randombytes_trng(uint8_t *obuf, size_t len)
-{
-    union
-    {
-        unsigned char aschar[4];
-        uint32_t asint;
-    } random;
-
-    while (len > 4)
-    {
-        random.asint = rng_get_random_blocking();
-        *obuf++ = random.aschar[0];
-        *obuf++ = random.aschar[1];
-        *obuf++ = random.aschar[2];
-        *obuf++ = random.aschar[3];
-        len -= 4;
-    }
-    if (len > 0)
-    {
-        for (random.asint = rng_get_random_blocking(); len > 0; --len)
-        {
-            *obuf++ = random.aschar[len - 1];
-        }
-    }
-
-    return 0;
-}
-
-int randombytes(uint8_t *obuf, size_t len) __attribute__ ((weak, alias ("randombytes_trng")));
-#else
+#include <stdint.h>
 #include <string.h>
+
+#pragma message("using pseudo rng")
 
 static uint32_t seed[32] = { 3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9, 3,
                              2, 3, 8, 4, 6, 2, 6, 4, 3, 3, 8, 3, 2, 7, 9, 5
@@ -131,4 +99,4 @@ int nonrandombytes(uint8_t *buf, size_t xlen) {
 
 int randombytes(uint8_t *obuf, size_t len) __attribute__ ((weak, alias ("nonrandombytes")));
 
-#endif
+

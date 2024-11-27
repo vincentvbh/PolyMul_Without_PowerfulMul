@@ -20,10 +20,22 @@ obj/$$(PRIMITIVE_PREFIX)_$(1)_$(2)_testvectors.o: $$(TESTS_ROOT_PATH)/testvector
 elf/$$(PRIMITIVE_PREFIX)_$(1)_$(2)_testvectors.elf: obj/$$(PRIMITIVE_PREFIX)_$(1)_$(2)_testvectors.o $$(COMMON_OBJS) $$(OPENCM3_OBJS) $$($(1)_$(2)_OBJS) $$(ARMv7-M_CROSS_LDSCRIPT)
 	$$(ARMv7-M_CROSS_LD) $$(COMMON_OBJS) $$(OPENCM3_OBJS) $$($(1)_$(2)_OBJS) $$< -o $$@ $$(ARMv7-M_CROSS_LDFLAGS) -l$$(OPENCM3_LIBNAME)
 
+obj/$$(PRIMITIVE_PREFIX)_$(1)_$(2)_hashing.o: $$(TESTS_ROOT_PATH)/hashing.c opencm3_lib
+	$$(ARMv7-M_CROSS_CC) $$($(1)_$(2)_CFLAGS) $$(ARMv7-M_CROSS_CFLAGS) -o $$@ -c $$<
+
+elf/$$(PRIMITIVE_PREFIX)_$(1)_$(2)_hashing.elf: obj/$$(PRIMITIVE_PREFIX)_$(1)_$(2)_hashing.o $$(filter-out $$(HASH_PATH)/fips202.o, $$(COMMON_OBJS)) $$(HASH_PATH)/fips202-profile.o $$(OPENCM3_OBJS) $$($(1)_$(2)_OBJS) $$(ARMv7-M_CROSS_LDSCRIPT)
+	$$(ARMv7-M_CROSS_LD) $$(filter-out $$(HASH_PATH)/fips202.o, $$(COMMON_OBJS)) $$(HASH_PATH)/fips202-profile.o $$(OPENCM3_OBJS) $$($(1)_$(2)_OBJS) $$< -o $$@ $$(ARMv7-M_CROSS_LDFLAGS) -l$$(OPENCM3_LIBNAME)
+
 obj/$$(PRIMITIVE_PREFIX)_$(1)_$(2)_speed.o: $$(TESTS_ROOT_PATH)/speed.c opencm3_lib
 	$$(ARMv7-M_CROSS_CC) $$($(1)_$(2)_CFLAGS) $$(ARMv7-M_CROSS_CFLAGS) -o $$@ -c $$<
 
 elf/$$(PRIMITIVE_PREFIX)_$(1)_$(2)_speed.elf: obj/$$(PRIMITIVE_PREFIX)_$(1)_$(2)_speed.o $$(COMMON_OBJS) $$(OPENCM3_OBJS) $$($(1)_$(2)_OBJS) $$(ARMv7-M_CROSS_LDSCRIPT)
+	$$(ARMv7-M_CROSS_LD) $$(COMMON_OBJS) $$(OPENCM3_OBJS) $$($(1)_$(2)_OBJS) $$< -o $$@ $$(ARMv7-M_CROSS_LDFLAGS) -l$$(OPENCM3_LIBNAME)
+
+obj/$$(PRIMITIVE_PREFIX)_$(1)_$(2)_stack.o: $$(TESTS_ROOT_PATH)/stack.c opencm3_lib
+	$$(ARMv7-M_CROSS_CC) $$($(1)_$(2)_CFLAGS) $$(ARMv7-M_CROSS_CFLAGS) -o $$@ -c $$<
+
+elf/$$(PRIMITIVE_PREFIX)_$(1)_$(2)_stack.elf: obj/$$(PRIMITIVE_PREFIX)_$(1)_$(2)_stack.o $$(COMMON_OBJS) $$(OPENCM3_OBJS) $$($(1)_$(2)_OBJS) $$(ARMv7-M_CROSS_LDSCRIPT)
 	$$(ARMv7-M_CROSS_LD) $$(COMMON_OBJS) $$(OPENCM3_OBJS) $$($(1)_$(2)_OBJS) $$< -o $$@ $$(ARMv7-M_CROSS_LDFLAGS) -l$$(OPENCM3_LIBNAME)
 endef
 

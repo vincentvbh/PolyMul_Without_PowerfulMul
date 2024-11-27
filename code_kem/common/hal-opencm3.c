@@ -352,6 +352,11 @@ uint64_t hal_get_time(void){
   return 0;
 }
 
+size_t hal_get_stack_size(void){
+  return 0;
+}
+
+
 #endif
 
 

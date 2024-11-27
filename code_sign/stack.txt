@@ -1,56 +1,44 @@
-stack measurements written on 2024-11-16 13:33:17.427443+00:00; iterations=1
+stack measurements written on 2024-11-26 23:17:19.810057+00:00; iterations=1
 
 m3 results for dilithium2 (impl=m3ref)
-dilithium2m3refkeygen: 38452
-dilithium2m3refsign: 52076
-dilithium2m3refverify: 36364
-
-m3 results for dilithium2 (impl=m3old)
-dilithium2m3oldkeygen: 38484
-dilithium2m3oldsign: 52116
-dilithium2m3oldverify: 36404
+dilithium2m3refkeygen: 38460
+dilithium2m3refsign: 52084
+dilithium2m3refverify: 36372
 
 m3 results for dilithium2 (impl=m3plant)
-dilithium2m3plantkeygen: 8764
-dilithium2m3plantsign: 44972
-dilithium2m3plantverify: 36404
+dilithium2m3plantkeygen: 8772
+dilithium2m3plantsign: 44980
+dilithium2m3plantverify: 36412
 
 m3 results for dilithium2 (impl=m3asmspeed)
-dilithium2m3asmspeedkeygen: 11804
+dilithium2m3asmspeedkeygen: 11812
 dilithium2m3asmspeedsign: 76876
-dilithium2m3asmspeedverify: 36356
+dilithium2m3asmspeedverify: 36364
 
 m3 results for dilithium3 (impl=m3ref)
-dilithium3m3refkeygen: 60972
-dilithium3m3refsign: 79716
-dilithium3m3refverify: 57860
-
-m3 results for dilithium3 (impl=m3old)
-dilithium3m3oldkeygen: 61004
-dilithium3m3oldsign: 79748
-dilithium3m3oldverify: 57900
+dilithium3m3refkeygen: 60980
+dilithium3m3refsign: 79724
+dilithium3m3refverify: 57868
 
 m3 results for dilithium3 (impl=m3plant)
-dilithium3m3plantkeygen: 9780
-dilithium3m3plantsign: 69020
-dilithium3m3plantverify: 57900
+dilithium3m3plantkeygen: 9788
+dilithium3m3plantsign: 69028
+dilithium3m3plantverify: 57908
 
 m3 results for dilithium3 (impl=m3asmspeed)
-dilithium3m3asmspeedkeygen: 13844
-dilithium3m3asmspeedsign: 69996
-dilithium3m3asmspeedverify: 57852
+dilithium3m3asmspeedkeygen: 13852
+dilithium3m3asmspeedsign: 70004
+dilithium3m3asmspeedverify: 57860
 
 m3 results for dilithium5 (impl=m3ref)
 
-m3 results for dilithium5 (impl=m3old)
-
 m3 results for dilithium5 (impl=m3plant)
-dilithium5m3plantkeygen: 11828
-dilithium5m3plantsign: 57740
-dilithium5m3plantverify: 42780
+dilithium5m3plantkeygen: 11836
+dilithium5m3plantsign: 57748
+dilithium5m3plantverify: 42788
 
 m3 results for dilithium5 (impl=m3asmspeed)
-dilithium5m3asmspeedkeygen: 17940
-dilithium5m3asmspeedsign: 67436
-dilithium5m3asmspeedverify: 42732
+dilithium5m3asmspeedkeygen: 17948
+dilithium5m3asmspeedsign: 67444
+dilithium5m3asmspeedverify: 42740
 

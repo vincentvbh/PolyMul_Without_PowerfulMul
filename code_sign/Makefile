@@ -64,40 +64,64 @@ PRIMITIVE_PREFIX      = crypto_sign
 ALL_ELF = \
 	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3ref_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3ref_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3ref_hashing.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3ref_speed.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3ref_stack.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3ref_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3ref_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3ref_hashing.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3ref_speed.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3ref_stack.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3plant_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3plant_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3plant_hashing.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3plant_speed.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3plant_stack.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3plant_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3plant_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3plant_hashing.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3plant_speed.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3plant_stack.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium5_m3plant_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium5_m3plant_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium5_m3plant_hashing.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium5_m3plant_speed.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium5_m3plant_stack.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3asmspeed_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3asmspeed_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3asmspeed_hashing.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3asmspeed_speed.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3asmspeed_stack.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3asmspeed_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3asmspeed_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3asmspeed_hashing.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3asmspeed_speed.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3asmspeed_stack.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium5_m3asmspeed_test.elf \
 	elf/$(PRIMITIVE_PREFIX)_dilithium5_m3asmspeed_testvectors.elf \
-	elf/$(PRIMITIVE_PREFIX)_dilithium5_m3asmspeed_speed.elf
+	elf/$(PRIMITIVE_PREFIX)_dilithium5_m3asmspeed_hashing.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium5_m3asmspeed_speed.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium5_m3asmspeed_stack.elf
 
-BENCH_ELF = \
-	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3ref_speed.elf \
-	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3ref_speed.elf \
-	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3plant_speed.elf \
-	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3plant_speed.elf \
-	elf/$(PRIMITIVE_PREFIX)_dilithium5_m3plant_speed.elf \
-	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3asmspeed_speed.elf \
-	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3asmspeed_speed.elf \
-	elf/$(PRIMITIVE_PREFIX)_dilithium5_m3asmspeed_speed.elf
+TEST_ELF = \
+	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3ref_test.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3ref_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3ref_test.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3ref_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3plant_test.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3plant_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3plant_test.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3plant_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium5_m3plant_test.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium5_m3plant_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3asmspeed_test.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium2_m3asmspeed_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3asmspeed_test.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium3_m3asmspeed_testvectors.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium5_m3asmspeed_test.elf \
+	elf/$(PRIMITIVE_PREFIX)_dilithium5_m3asmspeed_testvectors.elf
 
-TEST_OBJ_ARMv7 = $(filter-out $(BENCH_ELF), $(ALL_ELF))
+TEST_OBJ_ARMv7 = $(TEST_ELF)
 
 .PHONY: all all_armv7 clean libclean
 
@@ -108,6 +132,9 @@ all_armv7: $(TEST_OBJ_ARMv7)
 include scheme.mk
 
 # default rules
+
+$(HASH_PATH)/fips202-profile.o: $(HASH_PATH)/fips202.c opencm3_lib
+	$(ARMv7-M_CROSS_CC) $(ARMv7-M_CROSS_CFLAGS) -DPROFILE_HASHING -o $@ -c $<
 
 %.o: %.c opencm3_lib
 	$(ARMv7-M_CROSS_CC) $(ARMv7-M_CROSS_CFLAGS) -o $@ -c $<

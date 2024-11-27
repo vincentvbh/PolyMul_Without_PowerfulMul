@@ -332,3 +332,6 @@ size_t hal_get_stack_size(void)
   __asm__ volatile ("mov %0, sp" : "=r" (cur_stack));
   return cur_stack - heap_end;
 }
+
+
+
