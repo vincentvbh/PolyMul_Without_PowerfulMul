@@ -23,7 +23,7 @@ def getBinary(scheme, impl):
     return f"elf/crypto_{crypto_type}_{scheme}_{impl}_{testType}.elf"
 
 def getFlash(binary):
-    return f"openocd -f nucleo-f2.cfg -c \"program {binary} reset exit\" "
+    return f"openocd -f {Settings.DEVICE_CONFIG} -c \"program {binary} reset exit\" "
 
 def makeAll():
     if Settings.CLEAN == True:

@@ -9,6 +9,7 @@ class Settings:
 
     parser.add_argument('--jobs', default = multiprocessing.cpu_count())
     parser.add_argument('--device', default = "stm32f207zg")
+    parser.add_argument('--device_config', default = "nucleo-f2.cfg")
 
     if platform.system() == "Darwin":
         parser.add_argument('--serial_device', default = "/dev/tty.usbmodem11103")
@@ -22,6 +23,7 @@ class Settings:
 
     JOBS = args.jobs
     DEVICE = args.device
+    DEVICE_CONFIG = args.device_config
     SERIAL_DEVICE = args.serial_device
     BAUD_RATE = args.baud_rate
     CLEAN = args.clean

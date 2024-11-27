@@ -157,9 +157,9 @@ libclean:
 clean: libclean
 	find . -name '*.d' -delete
 	find . -name '*.o' -delete
-	rm -f elf/*
-	rm -f obj/*
-	rm -f obj_armv7/*
+	rm -rf elf
+	rm -rf obj
+	rm -rf obj_armv7
 
 
 
