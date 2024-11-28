@@ -19,7 +19,7 @@ The following files will be produced:
 
 Type
 ```
-sh ./flash.sh test.elf
+sh ./flash_bin.sh test.elf
 ```
 
 Sample output:
@@ -33,7 +33,7 @@ Test finished!
 
 Type
 ```
-sh ./flash.sh [bench file]
+sh ./flash_bin.sh [bench file]
 ```
 for `[bench file]` one of the following:
 - `bench_dilithium2.elf`
