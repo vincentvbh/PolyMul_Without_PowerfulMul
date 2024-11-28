@@ -1,10 +1,10 @@
 
 This file documents how to reproduce the numbers of the Cortex-M3 implementations in our paper.
 Inside the two folders `code_kem` and `code_sign`,
-the environment setup and the usage of the scripts are the same.
-The only different is the target cryptographic schemes and the benchmarking policies (KEMs vs signatures).
+the environment setup and the scripts usage are the same.
+The only difference is the target cryptographic schemes and the benchmarking policies (KEMs vs signatures).
 
-After going to each folders `code_kem` and `code_sign`, follow the instructions below.
+After going to each folder `code_kem` and `code_sign`, follow the instructions below.
 
 # Requirements
 
@@ -21,7 +21,7 @@ Open On-Chip Debugger 0.12.0
 - `python3` with `argparse`, `pyserial`, `numpy`, `filecmp` for reading from the serial port and parsing the data. We use `Python 3.13.0`.
 - `arm-none-eabi-gcc`. Cross-compiler We use `arm-none-eabi-gcc (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)`. You can download it from [Arm GNU Toolchain Downloads](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads).
 
-## Reproducing benchmarks on other board with Cortex-M3
+## Reproducing benchmarks on a different board with Cortex-M3
 
 - Your favorite board.
 - A toolchain flashing the binary files to your favorite borad (`openocd` might work).
@@ -112,12 +112,12 @@ End the following with a tab to list all possible names:
 ls /dev/tty.usb
 ```
 
-Plug in the device and repeat above.
-The name newly appeared is the name of the serial port.
+Plug in the device and repeat the above.
+The name that newly appeared is the name of the serial port.
 
 # Compilation and testing
 
-There are two ways for compiling the source files into binary files.
+There are two ways to compile the source files into binary files.
 
 ## Makefile
 
@@ -239,12 +239,12 @@ Run
 bash ./hosttest_cmp_testvectors.sh
 ```
 
-Notice that `sh` results in syntax error since this invokes process substitution.
+Notice that `sh` results in a syntax error since this invokes process substitution.
 
 # I don't have a board with Cortex-M3, but I have a machine with Windows/macOS, what should I do?
 
 In theory, the above cross-compile-and-emulate should be doable while emulating a board with Cortex-M3. But we didn't succeed.
-We installed `qemu` and tried below
+We installed `qemu` and tried below.
 ```
 qemu-system-arm -cpu cortex-m3 -machine lm3s6965evb -nographic \
                 -semihosting-config enable=on,target=native \

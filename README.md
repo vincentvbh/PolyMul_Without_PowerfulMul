@@ -71,7 +71,7 @@ Please follow the instructions in `examples/README.md`
 # Generating the tables of constants
 
 In the folder `gen_constant_table`, we include the C programs generating the tables of constants in our Dilithium NTT/iNTT and FNT for Dilithium.
-One only need a C compiler for generating the constants.
+One only needs a C compiler for generating the constants.
 Please follow the instructions in `gen_constant_table/README.md`
 
 # Experiemental range analysis

@@ -6,7 +6,7 @@ Quick start
 make all -j12
 ```
 
-Alternatively, one can compile as follows
+Alternatively, one can compile as follows.
 ```
 make all -j [jobs] DEVICE=[device name]
 ```
@@ -35,7 +35,7 @@ One can flash the binary file `[elf file]` as follows:
 openocd -f nucleo-f2.cfg -c "program [elf file] reset exit"
 ```
 
-Below gives all the commands relevant to this work
+Below are all the commands relevant to this work.
 ```
 openocd -f nucleo-f2.cfg -c "program elf/crypto_kem_lightsaber_test.elf reset exit"
 openocd -f nucleo-f2.cfg -c "program elf/crypto_kem_lightsaber_testvectors.elf reset exit"
@@ -56,7 +56,7 @@ openocd -f nucleo-f2.cfg -c "program elf/crypto_kem_firesaber_hashing reset exit
 
 # Python script
 
-We also program some Python scripts compiling, flashing, and parsing the outputs from the board
+We also program some Python scripts compiling, flashing, and parsing the outputs from the board.
 Type the following
 ```
 python3 ./[script] --jobs=[number of jobs] --device=[device name] --serial_device=[serial port name] --baud_rate=[baud rate] --clean
@@ -75,7 +75,7 @@ where
 - `[baud rate]`: This is the baud rate. When omitted, it is defaulted to `9600`.
 - `--clean`: This indicates if we call `make clean` prior to `make all`. When omitted, `make clean` won't be called.
 
-Below gives all the commands relevant to this work
+Below are all the commands relevant to this work.
 ```
 python3 ./test.py --jobs=12 --device=stm32f207zg --serial_device=/dev/tty.usbmodem11103 --baud_rate=9600 --clean
 python3 ./testvectors.py --jobs=12 --device=stm32f207zg --serial_device=/dev/tty.usbmodem11103 --baud_rate=9600 --clean
@@ -139,12 +139,12 @@ Run
 bash ./hosttest_cmp_testvectors.sh
 ```
 
-Notice that `sh` results in syntax error since this invokes process substitution.
+Notice that `sh` results in a syntax error since this invokes process substitution.
 
 # I don't have a board with Cortex-M3, but I have a machine with Windows/macOS, what should I do?
 
 In theory, the above cross-compile-and-emulate should be doable while emulating a board with Cortex-M3. But we didn't succeed.
-We installed `qemu` and tried below
+We installed `qemu` and tried below.
 ```
 qemu-system-arm -cpu cortex-m3 -machine lm3s6965evb -nographic \
                 -semihosting-config enable=on,target=native \
