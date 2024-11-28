@@ -11,6 +11,11 @@
 **/*.bin
 **/*.elf
 
+elf/
+bin/
+obj/
+obj_armv7/
+
 **/*.pdf
 
 **/.DS_Store

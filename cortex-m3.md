@@ -17,7 +17,7 @@ After going to each folders `code_kem` and `code_sign`, follow the instructions 
 ```
 Open On-Chip Debugger 0.12.0
 ```
-- `libopencm3`: For generating and compiling various platform-related files. Commit `9545471e4861090a77f79c4458eb19ec771e23d9` of [libopencm3](https://github.com/libopencm3/libopencm3.git). See the Section below for instructions
+- `libopencm3`: For generating and compiling various platform-related files. Commit `9545471e4861090a77f79c4458eb19ec771e23d9` of [libopencm3](https://github.com/libopencm3/libopencm3.git).
 - `python3` with `argparse`, `pyserial`, `numpy`, `filecmp` for reading from the serial port and parsing the data. We use `Python 3.13.0`.
 - `arm-none-eabi-gcc`. Cross-compiler We use `arm-none-eabi-gcc (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)`. You can download it from [Arm GNU Toolchain Downloads](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads).
 
@@ -30,8 +30,16 @@ Open On-Chip Debugger 0.12.0
 ## Testing correctness only (without accessing to Cortex-M3)
 
 This part varies between host machines.
-- A cross-compiler targeting `armv7-m`, `armv7-a`, or `armv7`. We use `gcc-arm-linux-gnueabi`.
-- A host machine with a `qemu`. `Ubuntu` on `x86`.
+- A cross-compiler targeting `armv7-m`, `armv7-a`, or `armv7`.
+- A host machine with a `qemu`.
+
+We tested with below:
+- Ubuntu LTS 22.04.1, `x86_64 GNU/Linux`
+- `gcc-arm-linux-gnueabi` or `gcc-arm-linux-gnueabihf`. 
+    - `arm-linux-gnueabi-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0`
+    - `arm-linux-gnueabi-gcc-12 (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0` 
+    - `arm-linux-gnueabihf-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0`
+- `qemu-user`. We use `1:6.2+dfsg-2ubuntu6.24`.
 
 # Before you start
 
@@ -190,19 +198,15 @@ The idea is to cross-compile and run the binary with emulation.
 - Cross-compile the program targeting any of `armv7-m`, `armv7-a`, `armv7` supported by the emulator.
 - Run with the emulator.
 
-Below we give an example.
-- Host machine: x86.
-- OS: Ubuntu.
-- Emulator:
-- Cross-compiler: `gcc-arm-linux-gnueabi` (in theory, `gcc-arm-linux-gnueabihf` should also work)
-
 ## Requirement
 
-Below we give an example.
-- Host machine: x86.
-- OS: Ubuntu.
-- Emulator: `qemu-user-static`.
-- Cross-compiler: `gcc-arm-linux-gnueabi` (in theory, `gcc-arm-linux-gnueabihf` should also work).
+Below we illustrate what work on our side.
+- Ubuntu LTS 22.04.1, `x86_64 GNU/Linux`
+- `gcc-arm-linux-gnueabi` or `gcc-arm-linux-gnueabihf`. 
+    - `arm-linux-gnueabi-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0`
+    - `arm-linux-gnueabi-gcc-12 (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0` 
+    - `arm-linux-gnueabihf-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0`
+- `qemu-user`. We use `1:6.2+dfsg-2ubuntu6.24`.
 
 ## Compilation
 
@@ -234,6 +238,8 @@ Run
 ```
 bash ./hosttest_cmp_testvectors.sh
 ```
+
+Notice that `sh` results in syntax error since this invokes process substitution.
 
 # I don't have a board with Cortex-M3, but I have a machine with Windows/macOS, what should I do?
 

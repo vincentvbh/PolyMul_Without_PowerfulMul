@@ -15,11 +15,12 @@ The following binaries will be produced:
 ```
 elf/crypto_kem_[scheme]_[testType].elf
 ```
-where `[scheme]` is one of the following:
+`[scheme]` is one of the following:
 - `lightsaber`
 - `saber`
 - `firesaber`
-and `[testType]` is one of the following:
+
+`[testType]` is one of the following:
 - `test`
 - `testvectors`
 - `speed`
@@ -92,11 +93,14 @@ The idea is to cross-compile and run the binary with emulation.
 
 ## Requirement
 
+This varies between host machines.
 Below we give an example.
-- Host machine: x86.
-- OS: Ubuntu.
-- Emulator:
-- Cross-compiler: `gcc-arm-linux-gnueabi` (`gcc-arm-linux-gnueabihf` should also work)
+- Ubuntu LTS 22.04.1, `x86_64 GNU/Linux`
+- `gcc-arm-linux-gnueabi` or `gcc-arm-linux-gnueabihf`. 
+    - `arm-linux-gnueabi-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0`
+    - `arm-linux-gnueabi-gcc-12 (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0` 
+    - `arm-linux-gnueabihf-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0`
+- `qemu-user`. We use `1:6.2+dfsg-2ubuntu6.24`.
 
 ## Compilation
 
@@ -134,6 +138,8 @@ Run
 ```
 bash ./hosttest_cmp_testvectors.sh
 ```
+
+Notice that `sh` results in syntax error since this invokes process substitution.
 
 # I don't have a board with Cortex-M3, but I have a machine with Windows/macOS, what should I do?
 

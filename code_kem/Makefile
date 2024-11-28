@@ -15,7 +15,7 @@ COMMON_OBJS             = $(patsubst %.c, %.o, $(COMMON_SOURCES))
 
 # cross-compilation targeting Armv7 on linux
 ARMv7_CROSS_CC         ?= arm-linux-gnueabi-gcc
-ARMv7_CROSS_FLAGS       = -march=armv7 -z noexecstack -g -static
+ARMv7_CROSS_FLAGS       = -march=armv7 -z noexecstack -g -static -mfpu=neon
 ARMv7_CROSS_CFLAGS      = $(CFLAGS) -O3 -Wall -DCROSS_ARMv7_HOSTTEST -I$(COMMON_PATH)
 
 # cross-compilation targeting Armv7-M on linux/macOS
