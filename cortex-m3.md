@@ -56,7 +56,7 @@ Type
 sh ./setup_libopencm3_all.sh
 ```
 
-will execute all `sh ./setup_libopencm3.sh` setting `libopencm3` properly.
+This executes all `sh ./setup_libopencm3.sh` cloning and checking out `libopencm3` to the target commit.
 
 ### `setup_libopencm3.sh`
 
