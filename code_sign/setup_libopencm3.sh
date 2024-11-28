@@ -12,6 +12,7 @@ else
 fi
 
 if [[ $repo_clone == 1 ]]; then
+    rm -rf libopencm3
     git clone https://github.com/libopencm3/libopencm3.git
 elif [[ $repo_clone == 2 ]]; then
     git submodule add https://github.com/libopencm3/libopencm3.git
