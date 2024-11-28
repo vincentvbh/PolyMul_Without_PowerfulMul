@@ -35,7 +35,23 @@ This part varies between host machines.
 
 # Before you start
 
-## Setup `libopencm3`.
+## Setup `libopencm3`
+
+There are two options.
+- Execute `setup_libopencm3_all.sh`
+- Exectue each `setup_libopencm3.sh`.
+
+### `setup_libopencm3_all.sh`
+
+Type
+```
+sh ./setup_libopencm3_all.sh
+```
+
+will execute all `sh ./setup_libopencm3.sh` setting `libopencm3` properly.
+
+### `setup_libopencm3.sh`
+
 - If `libopencm3` does not exist and you want to clone it, type the following:
 ```
 sh ./setup_libopencm3.sh
