@@ -12,8 +12,8 @@ on the following platforms:
 
 For Dilithium, the artifact targets a certain Round 3 version.
 There are several modifications after the publication of [FIPS 204](https://csrc.nist.gov/pubs/fips/204/final).
-This artifact doesn't apply those changes as they were not available at time of the submission.
-We explicitly include the target Dilithium Round 3 implementation in this artifact for the functionality tests and will modify the implementations in compliance to FIPS 204 in the future.
+This artifact doesn't apply those changes as they were not available at the time of the submission.
+We explicitly include the target Dilithium Round 3 implementation in this artifact for the functionality tests and will modify the implementations in compliance with FIPS 204 in the future.
 
 # Introduction
 
@@ -65,7 +65,7 @@ See `avr.md` for detailed instructions.
 # Examples of Toom--Cook, TMVP, and Nussbaumer
 
 In the folder `examples`, we give the C programs implementing our Nussbaumer + TMVP over $Z_{1, 2, 4, ..., 2^{24}}$ used in Dilithium and Saber.
-One only need a C compiler for running the examples.
+One only needs a C compiler for running the examples.
 Please follow the instructions in `examples/README.md`
 
 # Generating the tables of constants
@@ -74,10 +74,10 @@ In the folder `gen_constant_table`, we include the C programs generating the tab
 One only need a C compiler for generating the constants.
 Please follow the instructions in `gen_constant_table/README.md`
 
-# Experiemental range anslysis
+# Experiemental range analysis
 
 In the folder `range`, we include the C programs reporting the range of Dilithium NTT with random inputs as requested by reviewers. The numbers might differ for different randomness.
-One only need a C compiler for deriving the experimental range.
+One only needs a C compiler for deriving the experimental range.
 Please follow the instructions in `range/README.md`
 
 
