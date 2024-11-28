@@ -201,8 +201,8 @@ Below we give an example.
 Below we give an example.
 - Host machine: x86.
 - OS: Ubuntu.
-- Emulator:
-- Cross-compiler: `gcc-arm-linux-gnueabi` (`gcc-arm-linux-gnueabihf` should also work)
+- Emulator: `qemu-user-static`.
+- Cross-compiler: `gcc-arm-linux-gnueabi` (in theory, `gcc-arm-linux-gnueabihf` should also work).
 
 ## Compilation
 

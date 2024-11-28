@@ -30,6 +30,8 @@ We outline the following contributions of our paper:
 
 ## Cortex-M3
 
+### Reproducing benchmark
+
 - C compiler: This is for running the examples, the version doesn't matter as the performance numbers do not rely on the C compiler targeting the host machine.
 - Board `nucleo-f207zg`: The target hardware.
 - `openocd`: A tool for flashing the binary files to the board. Our version:
@@ -38,7 +40,18 @@ Open On-Chip Debugger 0.12.0
 ```
 - `libopencm3`: For generating and compiling various platform-related files. Commit `9545471e4861090a77f79c4458eb19ec771e23d9` of [libopencm3](https://github.com/libopencm3/libopencm3.git). See the Section below for instructions
 - `python3` with `argparse`, `pyserial`, `numpy`, `filecmp` for reading from the serial port and parsing the data. We use `Python 3.13.0`.
-- Cross-compiler for Armv7-M. The name of the package depends on the host machine. We use `arm-none-eabi-gcc (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)`. You can download it from [Arm GNU Toolchain Downloads](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads).
+- Cross-compiler for `armv7-m`. The name of the package depends on the host machine. We use `arm-none-eabi-gcc (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)`. You can download it from [Arm GNU Toolchain Downloads](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads).
+
+### Testing correctness with emulation
+
+- Cross-compiler for `armv7-m`, `armv7-a`, or `armv7`.
+- Emulator emulating `armv7-m`, `armv7-a`, or `armv7`.
+
+Below we give an example.
+- Host machine: x86.
+- OS: Ubuntu.
+- Emulator: `qemu-user-static`.
+- Cross-compiler: `gcc-arm-linux-gnueabi` (in theory, `gcc-arm-linux-gnueabihf` should also work).
 
 See `cortex-m3.md` for detailed instructions.
 
