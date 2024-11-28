@@ -1,7 +1,4 @@
 
-# stm32f207zg
-# lm3s811
-
 DEVICES_DATA         = devices.data
 
 CROSS_PREFIX        ?= arm-none-eabi
@@ -46,12 +43,14 @@ all: \
 $(eval $(call gen_link,stm32f207zg))
 $(eval $(call gen_link,lm3s6965))
 
+DEVICE ?= lm3s811
 
+$(eval $(call gen_link,$(DEVICE)))
 
 .PHONY: clean
 
 clean:
-	rm -f obj/*
+	rm -rf obj
 
 
 

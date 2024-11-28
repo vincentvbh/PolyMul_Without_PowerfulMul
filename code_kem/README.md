@@ -60,6 +60,7 @@ Type the following
 ```
 python3 ./[script] --jobs=[number of jobs] --device=[device name] --serial_device=[serial port name] --baud_rate=[baud rate] --clean
 ```
+
 where
 - `[script]` is one of the following
     - `test.py`: Test the correctness of the scheme.
@@ -102,6 +103,7 @@ Below we give an example.
 ```
 make all_armv7 ARMv7_CROSS_CC=[armv7 cross cc name]
 ```
+
 where `[armv7 cross cc name]` is the name of the cross-compiler.
 
 ## Test for correctness
@@ -142,6 +144,7 @@ qemu-system-arm -cpu cortex-m3 -machine lm3s6965evb -nographic \
                 -semihosting-config enable=on,target=native \
                 -kernel [elf file]
 ```
+
 where `[elf file]` is compiled with the linker script `lm3s6965.ld` as follows
 ```
 make all -j12 DEVICE=lm3s6965

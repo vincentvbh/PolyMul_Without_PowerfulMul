@@ -40,6 +40,7 @@ This part varies between host machines.
 ```
 sh ./setup_libopencm3.sh
 ```
+
 or
 ```
 sh ./setup_libopencm3.sh 1
@@ -52,11 +53,12 @@ sh ./setup_libopencm3.sh 2
 ```
 sh ./setup_libopencm3.sh [x]
 ```
+
 for any `[x]` that is not 1 or 2.
 
 ## Find a `nucleo-f207zg` board
 
-Find a `nucleo-f207zg` board. If you cannot find one, it is possible to test the functionality and reproduce the benchmark with a board with a Cortex-M3. See instructions at the end.
+Find a `nucleo-f207zg` board.
 
 ## Pick an approach flashing binaries to the board
 
@@ -71,6 +73,7 @@ On macOS, type
 ```
 brew install openocd
 ```
+
 On a Linux, type
 ```
 apt-get install openocd
@@ -84,6 +87,7 @@ End the following with a tab to list all possible names:
 ```
 ls /dev/tty.usb
 ```
+
 Plug in the device and repeat above.
 The name newly appeared is the name of the serial port.
 
@@ -97,6 +101,7 @@ Compile with the following:
 ```
 make all -j [jobs] DEVICE=[device name]
 ```
+
 where `[jobs]` is defaulted to the number of cores on the host machine if omitted, `[device name]` is defaulted to `stm32f207zg` if omitted.
 The binary files located at each folders listed in `IMPLEMENTATION_PATH` of `./mk/schemes.mk` will be compiled into `.elf` files and put into the folder `./elf`
 
@@ -106,6 +111,7 @@ For our board `nucleo-f207zg`, we flash the `.elf` file `[elf file]` with `openc
 ```
 openocd -f nucleo-f2.cfg -c "program [elf file] reset exit"
 ```
+
 The above command is also supplied in the script `flash_bin.sh`.
 One can alternatively flash the file `[elf file]` as follows:
 ```
@@ -117,6 +123,7 @@ Type
 ```
 python3 ./read_serial.py --serial_device=[serial port name] --baud_rate=[baud]
 ```
+
 to read the output of the serial port
 where `[serial port name]` is the name recognized by the host machine and `[baud]` is the Baud rate.
 `[serial port name]` and `[baud]` are defaulted to system/hardware-dependent values in the file `config.py` when omitted.
@@ -157,6 +164,7 @@ Follow instructions in `bench_core/m3/README.md`
 ```
 make all DEVICE=[device name]
 ```
+
 where `[device name].ld` is the target linker.
 
 # I don't have a board with Cortex-M3, but I have a machine with Linux, what should I do?
@@ -185,6 +193,7 @@ Below we give an example.
 ```
 make all_armv7 ARMv7_CROSS_CC=[armv7 cross cc name]
 ```
+
 where `[armv7 cross cc name]` is the name of the cross-compiler.
 
 ## Test for correctness
@@ -219,6 +228,7 @@ qemu-system-arm -cpu cortex-m3 -machine lm3s6965evb -nographic \
                 -semihosting-config enable=on,target=native \
                 -kernel [elf file]
 ```
+
 where `[elf file]` is compiled with the linker script `lm3s6965.ld` as follows
 ```
 make all -j12 DEVICE=lm3s6965

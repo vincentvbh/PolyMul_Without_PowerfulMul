@@ -16,3 +16,7 @@ fi
 cd libopencm3
 git checkout 9545471e4861090a77f79c4458eb19ec771e23d9
 cd ../
+
+ln -s ../libopencm3 fnt/libopencm3
+ln -s ../libopencm3 ntt/libopencm3
+ln -s ../libopencm3 Nussbaumer/libopencm3
