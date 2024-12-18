@@ -1,3 +1,4 @@
+#!/bin/bash
 
 if [[ "$1" != "" ]]; then
     repo_clone=$1

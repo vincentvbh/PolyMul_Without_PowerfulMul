@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     make -C libopencm3 -j$(sysctl -n hw.logicalcpu)
 else

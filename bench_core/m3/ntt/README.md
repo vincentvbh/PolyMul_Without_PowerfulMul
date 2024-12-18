@@ -3,7 +3,7 @@
 
 Compile `libopencm3` with
 ```
-sh ./makelib.sh
+bash ./makelib.sh
 ```
 and then compile the binary files with
 ```
