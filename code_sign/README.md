@@ -172,13 +172,27 @@ Type
     - `dilithium3`
     - `dilithium5`
 - `[implementation]` is one of the following:
-    - `m3ref` (only for `dilithium2` and `dilithium3`)
-    - `m3plant`
-    - `m3asmspeed`
+    - `m3ref`: Reference implementation (`dilithium2` and `dilithium3` only).
+    - `m3plant`: Old implementation.
+    - `m3asmspeed`: Our implementation.
 - `[test type]` is one of the following:
     - `test`
     - `testvectors`
     - Other tests `speed`, `stack`, `hashing` can be made possible, but they are meaningless while emulating.
+
+Below are the commands testing the correctness of the digital signature.
+```
+./obj_armv7/crypto_sign_dilithium2_m3ref_test | grep "ERROR"
+./obj_armv7/crypto_sign_dilithium3_m3ref_test | grep "ERROR"
+
+./obj_armv7/crypto_sign_dilithium2_m3plant_test | grep "ERROR"
+./obj_armv7/crypto_sign_dilithium3_m3plant_test | grep "ERROR"
+./obj_armv7/crypto_sign_dilithium5_m3plant_test | grep "ERROR"
+
+./obj_armv7/crypto_sign_dilithium2_m3asmspeed_test | grep "ERROR"
+./obj_armv7/crypto_sign_dilithium3_m3asmspeed_test | grep "ERROR"
+./obj_armv7/crypto_sign_dilithium5_m3asmspeed_test | grep "ERROR"
+```
 
 ### Comparing testvectors with bash
 

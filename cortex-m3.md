@@ -53,32 +53,37 @@ There are two options.
 
 Type
 ```
-sh ./setup_libopencm3_all.sh
+bash ./setup_libopencm3_all.sh
 ```
 
-This executes all `sh ./setup_libopencm3.sh` cloning and checking out `libopencm3` to the target commit.
+This executes all `bash ./setup_libopencm3.sh` cloning and checking out `libopencm3` to the target commit.
 
 ### `setup_libopencm3.sh`
 
 - If `libopencm3` does not exist and you want to clone it, type the following:
 ```
-sh ./setup_libopencm3.sh
+bash ./setup_libopencm3.sh
 ```
 
 or
 ```
-sh ./setup_libopencm3.sh 1
+bash ./setup_libopencm3.sh 1
 ```
 - If `libopencm3` does not exist and you want to add it as a submodule, type the following:
 ```
-sh ./setup_libopencm3.sh 2
+bash ./setup_libopencm3.sh 2
 ```
 - If `libopencm3` already exists as a repository, checkout to `9545471e4861090a77f79c4458eb19ec771e23d9` as follows:
 ```
-sh ./setup_libopencm3.sh [x]
+bash ./setup_libopencm3.sh [x]
 ```
 
 for any `[x]` that is not 1 or 2.
+
+- In any cases, one can also specify a commit hash by passing it to the second arguement. For example,
+    - `bash./setup_libopencm3.sh 1 [commit hash]`: This clones the repository `libopencm3` and checkouts to `[commit hash]`.
+    - `bash./setup_libopencm3.sh 2 [commit hash]`: This adds `libopencm3` as a submodule and checkouts to `[commit hash]`.
+    - `bash./setup_libopencm3.sh [x] [commit hash]`: For an `[x]` that is not 1 or 2, this simply checkouts to `[commit hash]`.
 
 ## Find a `nucleo-f207zg` board
 
@@ -127,7 +132,7 @@ make all -j [jobs] DEVICE=[device name]
 ```
 
 where `[jobs]` is defaulted to the number of cores on the host machine if omitted, `[device name]` is defaulted to `stm32f207zg` if omitted.
-The binary files located at each folders listed in `IMPLEMENTATION_PATH` of `./mk/schemes.mk` will be compiled into `.elf` files and put into the folder `./elf`
+The resulting binaries will be put into the folder `elf/`.
 
 ## Flashing binary files
 This step depends on the board.
@@ -139,7 +144,7 @@ openocd -f nucleo-f2.cfg -c "program [elf file] reset exit"
 The above command is also supplied in the script `flash_bin.sh`.
 One can alternatively flash the file `[elf file]` as follows:
 ```
-sh ./flash_bin.sh [elf file]
+bash ./flash_bin.sh [elf file]
 ```
 
 ## Reading from serial port

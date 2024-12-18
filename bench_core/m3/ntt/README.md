@@ -19,7 +19,7 @@ The following files will be produced:
 
 Type
 ```
-sh ./flash_bin.sh test.elf
+bash ./flash_bin.sh test.elf
 ```
 
 Sample output:
@@ -33,7 +33,7 @@ Test finished!
 
 Type
 ```
-sh ./flash_bin.sh [bench file]
+bash ./flash_bin.sh [bench file]
 ```
 for `[bench file]` one of the following:
 - `bench_dilithium2.elf`
@@ -42,7 +42,12 @@ for `[bench file]` one of the following:
 
 ## Dilithium2
 
-Sample output of `sh ./flash bench_dilithium2.elf`:
+Type
+```
+bash ./flash bench_dilithium2.elf
+```
+
+Sample output:
 ```
 ============ IGNORE OUTPUT BEFORE THIS LINE ============
 
@@ -82,7 +87,12 @@ bench finished!
 
 ## Dilithium3
 
-Sample output of `sh ./flash bench_dilithium3.elf`:
+Type
+```
+bash ./flash bench_dilithium3.elf
+```
+
+Sample output:
 ```
 ============ IGNORE OUTPUT BEFORE THIS LINE ============
 
@@ -122,7 +132,12 @@ bench finished!
 
 ## Dilithium5
 
-Sample output of `sh ./flash bench_dilithium5.elf`:
+Type
+```
+bash ./flash bench_dilithium5.elf
+```
+
+Sample output:
 ```
 ============ IGNORE OUTPUT BEFORE THIS LINE ============
 

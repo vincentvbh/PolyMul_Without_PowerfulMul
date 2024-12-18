@@ -17,7 +17,7 @@ The following files will be produced:
 
 Type
 ```
-sh ./flash_bin.sh test.elf
+bash ./flash_bin.sh test.elf
 ```
 
 Sample output:
@@ -31,7 +31,7 @@ Test finished!
 
 Type
 ```
-sh ./flash_bin.sh bench.elf
+bash ./flash_bin.sh bench.elf
 ```
 
 Sample output:
