@@ -14,7 +14,7 @@ The current version requires some tweak on I/O to print the outputs correctly on
 ## Compilation
 Type
 `make`. The following binaries will be produced:
-- `test`
+- `rand_test`
 - `gen`
 
 
@@ -35,7 +35,7 @@ gen finished!
 
 Type
 ```
-./test
+./rand_test
 ```
 
 Sample output:

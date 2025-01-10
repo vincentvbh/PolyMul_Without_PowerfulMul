@@ -44,7 +44,7 @@ for `[bench file]` one of the following:
 
 Type
 ```
-bash ./flash bench_dilithium2.elf
+bash ./flash_bin.sh bench_dilithium2.elf
 ```
 
 Sample output:
@@ -89,7 +89,7 @@ bench finished!
 
 Type
 ```
-bash ./flash bench_dilithium3.elf
+bash ./flash_bin.sh bench_dilithium3.elf
 ```
 
 Sample output:
@@ -134,7 +134,7 @@ bench finished!
 
 Type
 ```
-bash ./flash bench_dilithium5.elf
+bash ./flash_bin.sh bench_dilithium5.elf
 ```
 
 Sample output:
