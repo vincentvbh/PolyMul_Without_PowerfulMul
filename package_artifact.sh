@@ -9,4 +9,7 @@ find . -name '.git*' -exec rm -rf {} \;
 find . -name '__pycache__' -exec rm -rf {} \;
 find . -name '.DS_Store' -exec rm -rf {} \;
 find . -name 'libopencm3' -exec rm -rf {} \;
+cd ../
+rm -f artifact.zip
+zip artifact.zip artifact
 
