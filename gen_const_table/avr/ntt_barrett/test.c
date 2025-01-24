@@ -220,7 +220,7 @@ int main(void){
     twiddle = -1;
     naive_mulR(ref, poly1, poly2, N, &twiddle, coeff_ring);
 
-    printf("\n============ test started ============\n");
+    printf("\n============ test FNT 257 started ============\n");
 
 // ================
 

@@ -221,6 +221,13 @@ make all_armv7 ARMv7_CROSS_CC=[armv7 cross cc name]
 
 where `[armv7 cross cc name]` is the name of the cross-compiler.
 
+Below are the commands we tried.
+```
+make all_armv7 ARMv7_CROSS_CC=arm-linux-gnueabi-gcc
+make all_armv7 ARMv7_CROSS_CC=arm-linux-gnueabi-gcc-12
+make all_armv7 ARMv7_CROSS_CC=arm-linux-gnueabihf-gcc
+```
+
 ## Test for correctness
 
 ### Executing the binaries

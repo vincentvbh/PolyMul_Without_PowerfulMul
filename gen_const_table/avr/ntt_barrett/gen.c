@@ -63,7 +63,7 @@ int main(void){
 
     int32_t scale, omega, zeta, t;
 
-    printf("\n============ gen started ============\n");
+    printf("\n============ gen Barrett NTT started ============\n");
 
     profile.array_n = N;
     profile.ntt_n = N;

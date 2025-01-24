@@ -79,7 +79,7 @@ In the folder `gen_constant_table`, we include the C programs generating the tab
 One only needs a C compiler for generating the constants.
 Please follow the instructions in `gen_constant_table/README.md`
 
-# Experiemental range analysis
+# Experimental range analysis
 
 In the folder `range`, we include the C programs reporting the range of Dilithium NTT with random inputs as requested by reviewers. The numbers might differ for different randomness.
 One only needs a C compiler for deriving the experimental range.

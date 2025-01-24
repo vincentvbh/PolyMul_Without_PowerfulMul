@@ -50,6 +50,8 @@ int main(void){
 
     int32_t omega, zeta, twiddle, scale, t;
 
+    printf("\n============ gen FNT 257 started ============\n");
+
     for(size_t i = 0; i < Q; i++){
         __sq[i] = __sqrt[i] = 0;
     }

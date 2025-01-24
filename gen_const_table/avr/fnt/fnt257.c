@@ -104,6 +104,8 @@ int main(void)
 
     int16_t omega, zeta, twiddle, scale, t;
 
+    printf("\n============ test FNT 257 started ============\n");
+
     //! Generate Random Number =============================================================================================
     for(size_t i = 0; i < ARRAY_N; i++){
         t = rand();

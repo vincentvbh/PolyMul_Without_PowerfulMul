@@ -120,6 +120,8 @@ int main(void)
 
     int16_t omega, zeta, twiddle, scale, t;
 
+    printf("\n============ test NTT 769 started ============\n");
+
     //! Generate Random Number =============================================================================================
     srand(time(NULL));
     for (size_t i = 0; i < ARRAY_N; i++)
