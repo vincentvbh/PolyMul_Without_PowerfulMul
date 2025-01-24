@@ -130,8 +130,8 @@ The idea is to cross-compile and run the binary with emulation.
 ## Requirement
 
 This varies between host machines.
-Below we give an example.
-- Ubuntu LTS 22.04.1, `x86_64 GNU/Linux`
+We tested with below:
+- Ubuntu LTS 22.04.5, `x86_64 GNU/Linux`
 - `gcc-arm-linux-gnueabi` or `gcc-arm-linux-gnueabihf`. 
     - `arm-linux-gnueabi-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0`
     - `arm-linux-gnueabi-gcc-12 (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0` 

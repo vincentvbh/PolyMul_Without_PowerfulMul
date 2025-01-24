@@ -18,7 +18,7 @@ After going to each folder `code_kem` and `code_sign`, follow the instructions b
 Open On-Chip Debugger 0.12.0
 ```
 - `libopencm3`: For generating and compiling various platform-related files. Commit `9545471e4861090a77f79c4458eb19ec771e23d9` of [libopencm3](https://github.com/libopencm3/libopencm3.git).
-- `python3` with `argparse`, `pyserial`, `numpy`, `filecmp` for reading from the serial port and parsing the data. We use `Python 3.13.0`.
+- `python3` with `argparse`, `pyserial`, `numpy`, `filecmp` for reading from the serial port and parsing the data. We use `Python 3.13.1`.
 - `arm-none-eabi-gcc`. Cross-compiler We use `arm-none-eabi-gcc (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)`. You can download it from [Arm GNU Toolchain Downloads](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads).
 
 ## Reproducing benchmarks on a different board with Cortex-M3
@@ -34,7 +34,7 @@ This part varies between host machines.
 - A host machine with a `qemu`.
 
 We tested with below:
-- Ubuntu LTS 22.04.1, `x86_64 GNU/Linux`
+- Ubuntu LTS 22.04.5, `x86_64 GNU/Linux`
 - `gcc-arm-linux-gnueabi` or `gcc-arm-linux-gnueabihf`. 
     - `arm-linux-gnueabi-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0`
     - `arm-linux-gnueabi-gcc-12 (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0` 
@@ -205,8 +205,8 @@ The idea is to cross-compile and run the binary with emulation.
 
 ## Requirement
 
-Below we illustrate what work on our side.
-- Ubuntu LTS 22.04.1, `x86_64 GNU/Linux`
+We tested with below:
+- Ubuntu LTS 22.04.5, `x86_64 GNU/Linux`
 - `gcc-arm-linux-gnueabi` or `gcc-arm-linux-gnueabihf`. 
     - `arm-linux-gnueabi-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0`
     - `arm-linux-gnueabi-gcc-12 (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0` 
