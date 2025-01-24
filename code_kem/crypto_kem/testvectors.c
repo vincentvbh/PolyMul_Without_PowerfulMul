@@ -1,12 +1,9 @@
-
-
 /* Deterministic randombytes by Daniel J. Bernstein */
 /* taken from SUPERCOP (https://bench.cr.yp.to)     */
 
 #include "api.h"
-// #include "kem.h"
-#include "randombytes.h"
 #include "hal.h"
+#include "randombytes.h"
 
 #include <stdio.h>
 #include <stdint.h>
