@@ -21,4 +21,8 @@ We also provide scripts compiling, generating the twiddle factors, testing if th
 - `bash test_all.sh`: This executes the tests testing if the the twiddle factors are compatible with the NTTs.
 - `bash clean_all.sh`: This executes `make clean` whenever a `Makefile` is found under this folder.
 
+Chaining everything together, one can run the following:
+```
+bash make_all.sh; bash gen_all.sh; bash test_all.sh; bash clean_all.sh
+```
 
