@@ -1,8 +1,8 @@
 
 #include "api.h"
-#include "randombytes.h"
 #include "hal.h"
 #include "sendfn.h"
+#include "randombytes.h"
 
 #include <stdio.h>
 #include <string.h>

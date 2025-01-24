@@ -4,7 +4,7 @@
 /* taken from SUPERCOP (https://bench.cr.yp.to)     */
 
 #include "api.h"
-#include "kem.h"
+// #include "kem.h"
 #include "randombytes.h"
 #include "hal.h"
 
