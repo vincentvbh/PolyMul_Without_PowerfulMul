@@ -11,5 +11,5 @@ find . -name '.DS_Store' -exec rm -rf {} \;
 find . -name 'libopencm3' -exec rm -rf {} \;
 cd ../
 rm -f artifact.zip
-zip artifact.zip artifact
+zip -r artifact.zip artifact
 
