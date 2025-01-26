@@ -63,7 +63,9 @@ See `cortex-m3.md` for detailed instructions.
 ## AVR
 
 - [IAR Embedded Workbench for AVR](https://www.iar.com/ko/products/architectures/microchip/iar-embedded-workbench-for-avr/) :
-We developed our AVR code in IAR Embedded Workbench AVR. One can get a one week trial to run the artifact at the link.
+We developed our AVR code in IAR Embedded Workbench AVR.
+  - One can get a one week trial to run the artifact at the link.
+  - [IAR Embedded Workbench for AVR] is Windows (544.5MB) only software.
 
 See `avr.md` for detailed instructions.
 
