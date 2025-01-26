@@ -19,15 +19,15 @@ We developed our AVR code in IAR Embedded Workbench AVR. One can get a one week 
 - Right-click your project and click `Options`.
 - General Options -> Target -> Processor configuration -> Generic Device -> `-v6, Max 16 Mbyte data, 8Mbyte code`
 - General Options -> Target -> Memory model -> `Huge`
-<img src="https://github.com/vincentvbh/dilithium_embedded/blob/main/artifact/code/img/generic.png" width="400" height="400"/>
+<img src="img/generic.png" width="400" height="400"/>
 
 - C/C++ Compiler -> Optimizations -> `High` (Speed, pls enable all optimizaiton option)
-<img src="https://github.com/vincentvbh/dilithium_embedded/blob/main/artifact/code/img/speed.png" width="400" height="400"/>
+<img src="img/speed.png" width="400" height="400"/>
 
 - take a breakpoint each API (ex. crypto_sign_keypair, crypto_sign_signature, crypto_sign_verify)
 - make (F7) and run (Ctrl+).
 - if add a Register in the View Tap, one can see the Cycles. Before measuring Cycles for each API, make Count in register zero.
-<img src="https://github.com/vincentvbh/dilithium_embedded/blob/main/artifact/code/img/before.png" width="800" height="400"/>
-<img src="https://github.com/vincentvbh/dilithium_embedded/blob/main/artifact/code/img/after.png" width="800" height="400"/>
+<img src="img/before.png" width="800" height="400"/>
+<img src="img/after.png" width="800" height="400"/>
 
 - Other AVR code can be built and run in the same way as above.
