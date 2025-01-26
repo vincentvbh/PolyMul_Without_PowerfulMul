@@ -9,17 +9,6 @@ After going to each folders `code_kem` and `code_sign`, follow the instructions 
 
 - [IAR Embedded Workbench for AVR](https://www.iar.com/ko/products/architectures/microchip/iar-embedded-workbench-for-avr/) :
 We developed our AVR code in IAR Embedded Workbench AVR. One can get a one week trial to run the artifact at the link.
-- 이 소his file documents how to reproduce the numbers in our paper.
-Inside the two folders `code_kem` and `code_sign`,
-the environment setup and the usage of the scripts are the same.
-The only different is the target cryptographic schemes and the benchmarking policies (KEMs vs signatures).
-
-After going to each folders `code_kem` and `code_sign`, follow the instructions below.
-
-# Requirements
-
-- [IAR Embedded Workbench for AVR](https://www.iar.com/ko/products/architectures/microchip/iar-embedded-workbench-for-avr/) :
-We developed our AVR code in IAR Embedded Workbench AVR. One can get a one week trial to run the artifact at the link.
   - [IAR Embedded Workbench for AVR] is Windows (544.5MB) only software.
     
 # How to Run
