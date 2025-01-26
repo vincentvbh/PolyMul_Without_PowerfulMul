@@ -1,6 +1,6 @@
 
 
-# Output range of our Barrett multiplication in our experiement
+# Output range of our Barrett multiplication in our experiment
 
 ## Requirement
 
@@ -31,7 +31,7 @@ Sample output:
 gen finished!
 ```
 
-## Experiemental range with random inputs
+## Experimental range with random inputs
 
 Type
 ```

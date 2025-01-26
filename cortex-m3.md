@@ -24,7 +24,7 @@ Open On-Chip Debugger 0.12.0
 ## Reproducing benchmarks on a different board with Cortex-M3
 
 - Your favorite board.
-- A toolchain flashing the binary files to your favorite borad (`openocd` might work).
+- A toolchain flashing the binary files to your favorite board (`openocd` might work).
 - Others should be the same as above.
 
 ## Testing correctness only (without accessing to Cortex-M3)
@@ -43,11 +43,13 @@ We tested with below:
 
 # Before you start
 
+If you want to first try out the implementations with emulation, you can skip this step and go to the emulation part below.
+
 ## Setup `libopencm3`
 
 There are two options.
 - Execute `setup_libopencm3_all.sh`
-- Exectue each `setup_libopencm3.sh`.
+- Execute each `setup_libopencm3.sh`.
 
 ### `setup_libopencm3_all.sh`
 
@@ -80,7 +82,7 @@ bash ./setup_libopencm3.sh [x]
 
 for any `[x]` that is not 1 or 2.
 
-- In any cases, one can also specify a commit hash by passing it to the second arguement. For example,
+- In any cases, one can also specify a commit hash by passing it to the second argument. For example,
     - `bash./setup_libopencm3.sh 1 [commit hash]`: This clones the repository `libopencm3` and checkouts to `[commit hash]`.
     - `bash./setup_libopencm3.sh 2 [commit hash]`: This adds `libopencm3` as a submodule and checkouts to `[commit hash]`.
     - `bash./setup_libopencm3.sh [x] [commit hash]`: For an `[x]` that is not 1 or 2, this simply checkouts to `[commit hash]`.
@@ -136,7 +138,7 @@ The resulting binaries will be put into the folder `elf/`.
 
 ## Flashing binary files
 This step depends on the board.
-For our board `nucleo-f207zg`, we flash the `.elf` file `[elf file]` with `opencod` as follows:
+For our board `nucleo-f207zg`, we flash the `.elf` file `[elf file]` with `openocd` as follows:
 ```
 openocd -f nucleo-f2.cfg -c "program [elf file] reset exit"
 ```

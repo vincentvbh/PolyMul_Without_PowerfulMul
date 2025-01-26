@@ -201,6 +201,8 @@ Run
 bash ./hosttest_cmp_testvectors.sh
 ```
 
+
+
 Notice that `sh` results in a syntax error since this invokes process substitution.
 
 # I don't have a board with Cortex-M3, but I have a machine with Windows/macOS, what should I do?

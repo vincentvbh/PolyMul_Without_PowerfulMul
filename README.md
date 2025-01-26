@@ -19,7 +19,7 @@ We explicitly include the target Dilithium Round 3 implementation in this artifa
 
 We outline the following contributions of our paper:
 - Dilithium:
-    - Dilithium NTT/iNTT on Cortex-M3 and AVR: We generalize Barrett multiplication that is suitable for multilimb arithmetic. The resulting modular multiplication is used in Dilithium NTT/iNTT modulo the Dilithium prime $2^{23} - 2^{13} + 1$.
+    - Dilithium NTT/iNTT on Cortex-M3 and AVR: We generalize Barrett multiplication that is suitable for multi-limb arithmetic. The resulting modular multiplication is used in Dilithium NTT/iNTT modulo the Dilithium prime $2^{23} - 2^{13} + 1$.
     - Fermat number transform for challenge polynomial multiplication $c \boldsymbol{s}_1, c \boldsymbol{s}_2$ on Cortex-M3: We follow [AHKS22](https://link.springer.com/chapter/10.1007/978-3-031-09234-3_42) and apply Fermat number transform for `dilithium2` and `dilithium5`.
     - Nussbaumer + TMVP for challenge polynomial multiplication $c \boldsymbol{t}_0$ on Cortex-M3.
 - Saber:
@@ -65,7 +65,7 @@ See `cortex-m3.md` for detailed instructions.
 - [IAR Embedded Workbench for AVR](https://www.iar.com/ko/products/architectures/microchip/iar-embedded-workbench-for-avr/) :
 We developed our AVR code in IAR Embedded Workbench AVR.
   - One can get a one week trial to run the artifact at the link.
-  - [IAR Embedded Workbench for AVR] is Windows (544.5MB) only software.
+  - [IAR Embedded Workbench for AVR] is a Windows-only software (544.5MB).
 
 See `avr.md` for detailed instructions.
 

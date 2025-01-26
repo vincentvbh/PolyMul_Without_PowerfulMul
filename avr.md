@@ -1,7 +1,8 @@
+
 This file documents how to reproduce the numbers in our paper.
 Inside the two folders `code_kem` and `code_sign`,
 the environment setup and the usage of the scripts are the same.
-The only different is the target cryptographic schemes and the benchmarking policies (KEMs vs signatures).
+The only difference is the target cryptographic schemes and the benchmarking policies (KEMs vs signatures).
 
 After going to each folders `code_kem` and `code_sign`, follow the instructions below.
 
@@ -14,7 +15,7 @@ We developed our AVR code in IAR Embedded Workbench AVR.
     
 # How to Run
 - run IAR Workbench and create a new workspace.
-- click `Project` tap and creat new project. For project templates, select `main` in the `C` folder.
+- click `Project` tap and create new project. For project templates, select `main` in the `C` folder.
 - delete `main.c`
 - please add code files, including `main.c` (For example, add all the files in the dilithium2/avrBarrett folder)
 - Right-click your project and click `Options`.
@@ -23,7 +24,7 @@ We developed our AVR code in IAR Embedded Workbench AVR.
 - please refer `img/generic.png` file
 <img src="img/generic.png" width="400" height="400"/>
 
-- C/C++ Compiler -> Optimizations -> `High` (Speed, pls enable all optimizaiton option)
+- C/C++ Compiler -> Optimizations -> `High` (Speed, plus enable all optimization option)
 - please refer `img/speed.png` file
 <img src="img/speed.png" width="400" height="400"/>
 
