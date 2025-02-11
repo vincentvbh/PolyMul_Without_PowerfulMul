@@ -87,7 +87,14 @@ In the folder `range`, we include the C programs reporting the range of Dilithiu
 One only needs a C compiler for deriving the experimental range.
 Please follow the instructions in `range/README.md`
 
+# Licenses
 
+The following files are third-party materials licensed under GPL-3.0 / LGPL-3.0
+- `[every folder in this directory]/libopencm3`
+- `m3_util/devices.data`
+- `m3_util/genlink.py`
+- `m3_util/linker.ld.S`
+Other files are licensed under CC0 1.0 Universal.
 
 
 
