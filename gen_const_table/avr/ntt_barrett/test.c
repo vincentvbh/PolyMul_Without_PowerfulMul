@@ -56,7 +56,7 @@ int32_t freeze_32(int32_t a){
     if(a >= Q / 2){
         a -= Q;
     }
-    if(a <= -Q / 2){
+    if(a < -Q / 2){
         a += Q;
     }
 
